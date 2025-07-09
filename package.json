@@ -1,5 +1,5 @@
 {
-  "name": "netband-react",
+  "name": "win-distributor",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hotjar/browser": "^1.0.9",
     "next": "14.2.5",
     "react": "^18",
     "react-bootstrap": "^1.6.1",
