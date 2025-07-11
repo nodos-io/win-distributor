@@ -8,17 +8,6 @@
 	@include breakpoint (max-lg){
 		display: none;
 	}
-
-	&::before {
-		@include before;
-		background-color: $theme-color;
-		z-index: -1;
-		left: 73%;
-
-		@include breakpoint (max-xl4){
-			display: none;
-		}
-	}
 }
 
 .header-top-section-2 {
@@ -48,7 +37,7 @@
 
 .header-top-wrapper {
 	@include flex;
-	justify-content: space-between;
+	justify-content: center;
 
 	.contact-list {
 		@include flex;
@@ -359,22 +348,6 @@
 	background-color: $white;
 	box-shadow: $shadow;
 	z-index: 999;
-	
-	&::before {
-		position: absolute;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		height: 100%;
-		width: 110px;
-		content: "";
-		background-color: $theme-color;
-		z-index: -1;
-
-		@include breakpoint (max-xl4){
-			display: none !important;
-		}
-	}
 }
 
 .header-section-2 {
