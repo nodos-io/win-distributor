@@ -1,6 +1,7 @@
 "use client";
 import useClickOutside from "@/utility/useClickOutside";
 import { Fragment, useEffect, useState } from "react";
+import ContactUsForm from "@/components/form/ContactUsForm";
 
 const Popup_ = ({ close }) => {
   const domNode = useClickOutside(() => {
@@ -25,17 +26,7 @@ const Popup_ = ({ close }) => {
               >
               ×
             </button>
-            <form id="feifj" className="white-popup-block p-4 bg-white rounded shadow">
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label">Numero de celular:</label>
-                <input id="name" name="name" type="text" className="form-control" />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">DNI:</label>
-                <input id="email" name="email" type="email" className="form-control" />
-              </div>
-              <button type="submit" className="btn btn-primary w-100">Llamame</button>
-            </form>
+            <ContactUsForm/>
           </div>
           <div className="mfp-preloader">Loading...</div>
         </div>

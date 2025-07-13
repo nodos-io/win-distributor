@@ -1,0 +1,31 @@
+// Contact Us Form Styles
+.contact-us-container{
+  h3{
+    text-transform: none;
+  }
+  form#contact-us-form{
+    label.form-contact-privacy{
+      font-size: 12px;
+      a{
+        color: $theme-color;
+        text-decoration: underline;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+
+    input#privacyPolicy{
+      font-size: 12px;
+      margin-top: 0.75em;
+    }
+
+    .row> div{
+      margin-top: 0.75rem;
+    }
+
+    .form-check{
+      padding-left: 1.25em;
+    }
+  }
+}
