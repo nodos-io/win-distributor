@@ -1,6 +1,7 @@
 "use client";
 import EmbedPopup from "@/components/popup/EmbedPopup";
 import ImageView from "@/components/popup/ImageView";
+import Popup from "@/components/popup/Popup";
 import { netBandUtility } from "@/utility";
 import { Fragment, useEffect } from "react";
 import Footer from "./Footer";
@@ -24,6 +25,7 @@ const NetBandLayout = ({
     <Fragment>
       <ImageView />
       <EmbedPopup />
+      <Popup />
       <Mouse />
       <Header header={header} single={single} menus={menus} />
       {children}

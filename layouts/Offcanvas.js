@@ -20,80 +20,37 @@ const Offcanvas = ({ closeSidebar, sidebar, single }) => {
                   </button>
                 </div>
               </div>
-              <p className="d-none d-xl-block">
-                Ne summo dictas pertinacia nam. Illum cetero vocent ei vim, case
-                regione signiferumque vim te. Ex mea quem munere lobortis. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse
-                cillum.
-              </p>
               <div className="mobile-menu fix mb-3 mean-container">
                 <MobileMenu single={single} />
               </div>
               <div className="offcanvas__contact">
-                <h4>Contact Info</h4>
+                <h4>Información</h4>
                 <ul>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon">
-                      <i className="fal fa-map-marker-alt" />
-                    </div>
-                    <div className="offcanvas__contact-text">
-                      <a target="_blank" href="#">
-                        Main Street, Melbourne, Australia
-                      </a>
-                    </div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15">
-                      <i className="fal fa-envelope" />
-                    </div>
-                    <div className="offcanvas__contact-text">
-                      <a href="mailto:info@netband.com">
-                        <span className="mailto:info@netband.com">
-                          info@netband.com
-                        </span>
-                      </a>
-                    </div>
-                  </li>
-                  <li className="d-flex align-items-center">
-                    <div className="offcanvas__contact-icon mr-15">
-                      <i className="fal fa-clock" />
-                    </div>
-                    <div className="offcanvas__contact-text">
-                      <a target="_blank" href="#">
-                        Mod-friday, 09am -05pm
-                      </a>
-                    </div>
-                  </li>
                   <li className="d-flex align-items-center">
                     <div className="offcanvas__contact-icon mr-15">
                       <i className="far fa-phone" />
                     </div>
                     <div className="offcanvas__contact-text">
-                      <a href="tel:+11002345909">+11002345909</a>
+                      <a
+                        href={`https://wa.me/51934867509?text=${encodeURIComponent(
+                          `¡Hola! Soy tu asesora WIN.\nTe ayudo a activar tu internet en casa, sin costo de instalación y con buena señal garantizada.\n¿Quieres que te brinde más información?`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => closeSidebar()}
+                      >
+                        934867509
+                      </a>
                     </div>
                   </li>
                 </ul>
                 <div className="header-button mt-4">
-                  <Link href="contact" className="theme-btn text-center">
+                  <button href="contact" className="theme-btn text-center popup-modal" onClick={() => closeSidebar()}>
                     <span>
-                      Contact Us
+                      Contáctenos
                       <i className="fas fa-chevron-right" />
                     </span>
-                  </Link>
-                </div>
-                <div className="social-icon d-flex align-items-center">
-                  <a href="#">
-                    <i className="fab fa-facebook-f" />
-                  </a>
-                  <a href="#">
-                    <i className="fab fa-twitter" />
-                  </a>
-                  <a href="#">
-                    <i className="fab fa-youtube" />
-                  </a>
-                  <a href="#">
-                    <i className="fab fa-linkedin-in" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

@@ -79,21 +79,35 @@ const Header1 = ({ openSidebar, single, menus }) => {
                 </div>
                 <div className="header-right d-flex justify-content-end align-items-center">
                   <div className="contact-info">
-                    <div className="icon">
-                      <img src="assets/img/call.png" alt="img" />
-                    </div>
                     <div className="content">
                       <p>Llámanos al:</p>
                       <h6>
-                        <a href="tel:+23645689622">934867509</a>
+                        <a
+                          href={`https://wa.me/51934867509?text=${encodeURIComponent(
+                            `¡Hola! Soy tu asesora WIN.\nTe ayudo a activar tu internet en casa, sin costo de instalación y con buena señal garantizada.\n¿Quieres que te brinde más información?`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => closeSidebar()}
+                        >
+                          934867509
+                        </a>
                       </h6>
                     </div>
                   </div>
                   <div className="header-button">
-                    <Link href="contact" className="link-btn">
+                    <button className="link-btn popup-modal">
                       <span>Contáctenos</span>
                       <i className="fas fa-chevron-right" />
-                    </Link>
+                    </button>
+                  </div>
+                  <div className="header__hamburger d-lg-none my-auto">
+                    <div
+                      className="sidebar__toggle"
+                      onClick={() => openSidebar()}
+                    >
+                      <i className="far fa-bars" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -197,7 +211,6 @@ const Header2 = ({ openSidebar, single, menus }) => {
                     <i className="far fa-shopping-cart" />
                   </Link>
                 </div>
-                <SearchBtn />
                 <div className="header-button">
                   <Link href="contact" className="theme-btn">
                     <span>
@@ -352,7 +365,6 @@ const Header4 = ({ openSidebar, single, menus }) => {
               </div>
             </div>
             <div className="header-right d-flex justify-content-end align-items-center">
-              <SearchBtn />
               <div className="header-button">
                 <Link href="contact" className="theme-btn">
                   <span>

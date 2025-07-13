@@ -4,10 +4,6 @@
 	padding: 10px 0;
 	position: relative;
 	z-index: 9;
-
-	@include breakpoint (max-lg){
-		display: none;
-	}
 }
 
 .header-top-section-2 {
@@ -54,6 +50,10 @@
 			i {
 				color: $theme-color;
 				margin-right: 10px;
+			}
+
+			@include breakpoint (max-lg){
+				font-size: 12px;
 			}
 		}
 	}
@@ -362,7 +362,7 @@
 }
 
 .menu-thumb {
-	@include breakpoint (max-xl){
+	@include breakpoint (max-lg){
 		display: none !important;
 	}
 }
@@ -656,7 +656,7 @@
 					@include flex;
 					gap: 20px;
 
-					@include breakpoint (max-xxxl){
+					@include breakpoint (max-lg){
 						display: none !important;
 					}
 
@@ -672,7 +672,7 @@
 				}
 
 				.header-button {
-					@include breakpoint (max-xxl){
+					@include breakpoint (max-lg){
 						display: none !important;
 					}
 				}
