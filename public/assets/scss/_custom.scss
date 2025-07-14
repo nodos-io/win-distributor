@@ -33,8 +33,10 @@
 // Hero Slider
 .hero-1 {
   .hero-image {
-    &::before {
+    @include breakpoint(max-lg){
+      &::before {
         opacity: 0.75;
+      }
     }
   }
   .hero-prefix-subtitle{
