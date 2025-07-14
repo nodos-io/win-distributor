@@ -6,7 +6,6 @@ import { netBandUtility } from "@/utility";
 import { Fragment, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import Mouse from "./Mouse";
 const NetBandLayout = ({
   children,
   header,
@@ -26,7 +25,6 @@ const NetBandLayout = ({
       <ImageView />
       <EmbedPopup />
       <Popup />
-      <Mouse />
       <Header header={header} single={single} menus={menus} />
       {children}
       <Footer footer={footer} />

@@ -34,3 +34,15 @@
 .hero-prefix-subtitle{
   margin-left: 0 !important;
 }
+
+// Feature Icon
+section.feature-icon-box-area{
+  .container{
+    max-width: fit-content;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .feature-icon-box-wrapper{
+    margin-top: 0;
+  }
+}
