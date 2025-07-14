@@ -671,12 +671,6 @@
 					}
 				}
 
-				.header-button {
-					@include breakpoint (max-lg){
-						display: none !important;
-					}
-				}
-
 				.search-icon {
 					color: $white;
 

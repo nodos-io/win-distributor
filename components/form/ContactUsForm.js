@@ -1,6 +1,16 @@
 "use client";
 
 const ContactUsForm = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    console.log("Form submitted with data:", data);
+    // Here you can handle the form submission, e.g., send it to an API
+    form.reset(); // Reset the form after submission
+  };
+
   return (
     <div className="contact-us-container contact-form-items white-popup-block p-4 bg-white rounded shadow">
       <div className="contact-title">
@@ -9,7 +19,7 @@ const ContactUsForm = () => {
         </h3>
         <p>&nbsp;</p>
       </div>
-      <form id="contact-us-form" method="POST">
+      <form id="contact-us-form" method="POST" onSubmit={(e) => { handleSubmit(e); }}>
         <div className="row g-4">
           <div
             className="col-lg-12 wow fadeInUp"

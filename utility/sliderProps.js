@@ -25,10 +25,9 @@ export const sliderProps = {
     loop: true,
     slidesPerView: 1,
     effect: "fade",
-    speed: 3000,
     autoplay: {
       delay: 7000,
-      disableOnInteraction: false,
+      disableOnInteraction: true,
     },
     navigation: {
       nextEl: ".array-prev",
