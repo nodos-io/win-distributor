@@ -31,8 +31,21 @@
 }
 
 // Hero Slider
-.hero-prefix-subtitle{
-  margin-left: 0 !important;
+.hero-1 {
+  .hero-image {
+    &::before {
+        opacity: 0.75;
+    }
+  }
+  .hero-prefix-subtitle{
+    margin-left: 0 !important;
+  }
+
+  br {
+    @include breakpoint(max-lg){
+      display: block;
+    }
+  }
 }
 
 // Feature Icon
@@ -44,5 +57,31 @@ section.feature-icon-box-area{
   }
   .feature-icon-box-wrapper{
     margin-top: 0;
+  }
+}
+
+// Pricing Card
+.pricing-section{
+  .pricing-header{
+    s{
+      font-size: 16px;
+    }
+  }
+  .price{
+    s{
+      font-size: 14px;
+      color: black;
+    }
+  }
+}
+
+// Counter Section
+.counter-section{
+  .container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .counter-wrapper{
+      margin-top: 0;
+    }
   }
 }

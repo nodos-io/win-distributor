@@ -52,6 +52,36 @@ export const sliderProps = {
       clickable: true,
     },
   },
+  planSlider: {
+    spaceBetween: 20,
+    speed: 2000,
+    loop: false,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".dot",
+      clickable: true,
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 4,
+      },
+      991: {
+        slidesPerView: 3,
+      },
+      767: {
+        slidesPerView: 2,
+      },
+      575: {
+        slidesPerView: 1,
+      },
+      0: {
+        slidesPerView: 1,
+      },
+    },
+  },
   movieSlider: {
     spaceBetween: 20,
     speed: 2000,
