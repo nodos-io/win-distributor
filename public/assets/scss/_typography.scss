@@ -1,11 +1,13 @@
 /* --------------------------------------------
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kode+Mono:wght@400..700&display=swap');
+@font-face {
+    font-family: MadeTommySoft;
+    src: url("/public/assets/fonts/made_tommy_soft/MADETommySoft\ Black.otf") format("opentype");
+}
 
-
-$heading-font: "Inter", sans-serif;
-$body-font: "Inter", sans-serif;
+$heading-font: "MadeTommySoft", sans-serif;
+$body-font: "MadeTommySoft", sans-serif;
 
 //font-family: "Font Awesome 5 Pro";
 $fa: "Font Awesome 5 Pro";
