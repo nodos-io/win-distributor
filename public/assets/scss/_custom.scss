@@ -87,3 +87,36 @@ section.feature-icon-box-area{
     }
   }
 }
+
+// Whatsapp Chat Icon
+.wa-chat-icon {
+  display: flex;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+
+  img {
+    margin: auto;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
+
+@media (max-width: 991px) {
+  .wa-chat-icon {
+    width: 54px;
+    height: 54px;
+    right: 15px;
+    bottom: 15px;
+  }
+}

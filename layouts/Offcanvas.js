@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { MobileMenu } from "./Menus";
+import { WHATSAPP_PHONE_LINK, WHATSAPP_PHONE_CLEAN } from "@/lib/constants";
 const Offcanvas = ({ closeSidebar, sidebar, single }) => {
   return (
     <Fragment>
@@ -32,14 +33,12 @@ const Offcanvas = ({ closeSidebar, sidebar, single }) => {
                     </div>
                     <div className="offcanvas__contact-text">
                       <a
-                        href={`https://wa.me/51934867509?text=${encodeURIComponent(
-                          `¡Hola! Soy tu asesora WIN.\nTe ayudo a activar tu internet en casa, sin costo de instalación y con buena señal garantizada.\n¿Quieres que te brinde más información?`
-                        )}`}
+                        href={`${WHATSAPP_PHONE_LINK}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => closeSidebar()}
                       >
-                        934867509
+                        {WHATSAPP_PHONE_CLEAN}
                       </a>
                     </div>
                   </li>

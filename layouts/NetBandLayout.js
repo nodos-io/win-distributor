@@ -6,6 +6,8 @@ import { netBandUtility } from "@/utility";
 import { Fragment, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import {WHATSAPP_PHONE_LINK} from "@/lib/constants";
+
 const NetBandLayout = ({
   children,
   header,
@@ -28,6 +30,9 @@ const NetBandLayout = ({
       <Header header={header} single={single} menus={menus} />
       {children}
       <Footer footer={footer} />
+      <a href={`${WHATSAPP_PHONE_LINK}`} className="wa-chat-icon" target="_blank">
+        <img src="assets/img/whatsapp.svg" alt='Whatsapp Chat' loading="lazy" width="32" height="32" />
+		  </a>
     </Fragment>
   );
 };
