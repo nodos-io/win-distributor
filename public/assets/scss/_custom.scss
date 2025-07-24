@@ -32,21 +32,37 @@
 
 // Hero Slider
 .hero-1 {
-  .hero-image {
-    @include breakpoint(max-lg){
+  @include breakpoint(max-lg){
+    .swiper-mobile-slide {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-image {
       &::before {
-        opacity: 0.75;
+        opacity: 0.15;
+      }
+      position: relative !important;
+      background-size: cover;
+      min-height: 220px;
+    }
+    .container{
+      .hero-content{
+        padding: 0 !important;
+        .shadow{
+          box-shadow: none !important;
+        }
+        .contact-us-container{
+          margin-bottom: 0 !important;
+        }
       }
     }
-  }
-  .hero-prefix-subtitle{
-    margin-left: 0 !important;
-  }
-
-  br {
-    @include breakpoint(max-lg){
+    br {
       display: block;
     }
+  }
+    
+  .hero-prefix-subtitle{
+    margin-left: 0 !important;
   }
 }
 

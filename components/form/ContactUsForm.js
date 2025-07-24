@@ -67,7 +67,7 @@ const ContactUsForm = () => {
             </div>
           </div>
           <div
-            className="col-lg-6 wow fadeInUp"
+            className="col-lg-12 d-flex justify-content-center wow fadeInUp"
             data-wow-delay=".8s"
           >
             <button type="submit" className="theme-btn">
