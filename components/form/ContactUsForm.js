@@ -62,7 +62,7 @@ const ContactUsForm = () => {
                 required
               />
               <label className="form-check-label form-contact-privacy" htmlFor="privacyPolicy">
-                He leído y acepto la <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>
+                He leído y acepto la <a href="/politica-privacidad" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>
               </label>
             </div>
           </div>
