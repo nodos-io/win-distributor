@@ -56,10 +56,6 @@ export const sliderProps = {
     spaceBetween: 20,
     speed: 2000,
     loop: false,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
     pagination: {
       el: ".dot",
       clickable: true,
