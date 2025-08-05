@@ -4,14 +4,116 @@ import Service1 from "@/components/Service";
 import BrandSlider from "@/components/slider/BrandSlider";
 import Home1 from "@/components/slider/Home1";
 import MovieSlider from "@/components/slider/MovieSlider";
+import PlanSlider from "@/components/slider/PlanSlider";
 import TestimonialSlider from "@/components/slider/TestimonialSlider";
 import NetBandLayout from "@/layouts/NetBandLayout";
 import Link from "next/link";
+import Counter from "@/components/Counter";
+
 const page = () => {
   return (
     <NetBandLayout header={1}>
       {/*<< Hero Section Start >>*/}
       <Home1 />
+      {/*<< Feature Icon Box Section Start >>*/}
+      <section className="feature-icon-box-area">
+        <div className="container">
+          <div className="feature-icon-box-wrapper">
+            <div className="row g-4">
+              <div
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                data-wow-delay=".3s"
+              >
+                <div className="icon-box-items">
+                  <div className="icon">
+                    <i className="flaticon-tv-box-1" />
+                  </div>
+                  <div className="content">
+                    <h3>Win Box</h3>
+                    <p>Convierte tu televisor a Smart sin necesidad de cambiarla.</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                data-wow-delay=".5s"
+              >
+                <div className="icon-box-items">
+                  <div className="icon">
+                    <i className="flaticon-smartphone" />
+                  </div>
+                  <div className="content">
+                    <h3>Fono Win</h3>
+                    <p>Conectate sin limites, desde tu hogar o fuera de ella.</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                data-wow-delay=".7s"
+              >
+                <div className="icon-box-items">
+                  <div className="icon">
+                    <i className="flaticon-wifi-router-2" />
+                  </div>
+                  <div className="content">
+                    <h3>Mesh</h3>
+                    <p>
+                      Agregalos a tu plan y amplifica la cobertura del internet en tu hogar.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*<< Pricing Section Start >>*/}
+      <section className="pricing-section fix section-padding">
+        <div className="container custom-container-2">
+          <div className="section-title text-center">
+            <span className="wow fadeInUp">Hard Bundle</span>
+            <h2 className="text-white wow fadeInUp" data-wow-delay=".3s">
+              Cero Costo De Instalación <br/> En Todos Los Planes
+            </h2>
+          </div>
+          <PlanSlider/>
+        </div>
+      </section>
+      {/*<< Counter Section Start >>*/}
+      <section className="counter-section">
+        <div className="container">
+          <div className="counter-wrapper">
+            <div className="counter-items wow fadeInUp" data-wow-delay=".2s">
+              <h2>
+                <Counter end={6} />+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </h2>
+              <p>
+                Años De <br />
+                Experiencia
+              </p>
+            </div>
+            <div className="counter-items wow fadeInUp" data-wow-delay=".4s">
+              <h2>
+                <Counter end={600} />k
+              </h2>
+              <p>
+                Clientes <br />
+                Satisfechos
+              </p>
+            </div>
+            <div className="counter-items wow fadeInUp" data-wow-delay=".8s">
+              <h2>
+                <Counter end={20} />+&nbsp;&nbsp;&nbsp;
+              </h2>
+              <p>
+                Distritos Coberturados <br/>
+                A Nivel Lima Y Mas
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/*<< Feature Section Start >>*/}
       <section className="feature-section fix section-padding">
         <div className="shape-image">
@@ -396,59 +498,6 @@ const page = () => {
           </div>
         </div>
       </section>
-      {/*<< Feature Icon Box Section Start >>*/}
-      <section className="feature-icon-box-area">
-        <div className="container">
-          <div className="feature-icon-box-wrapper">
-            <div className="row g-4">
-              <div
-                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                data-wow-delay=".3s"
-              >
-                <div className="icon-box-items">
-                  <div className="icon">
-                    <i className="flaticon-tv-box-1" />
-                  </div>
-                  <div className="content">
-                    <h3>Smart TV Box</h3>
-                    <p>200+ entertainment channels for different age groups</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                data-wow-delay=".5s"
-              >
-                <div className="icon-box-items active">
-                  <div className="icon">
-                    <i className="flaticon-smartphone" />
-                  </div>
-                  <div className="content">
-                    <h3>Mobile connection</h3>
-                    <p>Use our router to stay online on all your devices.</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                data-wow-delay=".7s"
-              >
-                <div className="icon-box-items">
-                  <div className="icon">
-                    <i className="flaticon-wifi-router-2" />
-                  </div>
-                  <div className="content">
-                    <h3>Wifi internet</h3>
-                    <p>
-                      High-speed Internet access that is always on &amp; fast.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/*<< Team Section Start >>*/}
       <section className="team-section section-padding">
         <div className="container">
@@ -749,190 +798,6 @@ const page = () => {
           </div>
         </div>
       </section>
-      {/*<< Pricing Section Start >>*/}
-      <section className="pricing-section fix section-padding">
-        <div className="container custom-container-2">
-          <div className="section-title text-center">
-            <span className="wow fadeInUp">Pricing Plan</span>
-            <h2 className="text-white wow fadeInUp" data-wow-delay=".3s">
-              Choose Your Internet <br />
-              Pack By Speed
-            </h2>
-          </div>
-          <div className="row">
-            <div
-              className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp"
-              data-wow-delay=".2s"
-            >
-              <div className="pricing-card-items">
-                <div className="pricing-header">
-                  <h6>Internet</h6>
-                  <h3>Easy Surfing</h3>
-                </div>
-                <ul className="icon-items">
-                  <li>
-                    <i className="flaticon-connection" />
-                  </li>
-                </ul>
-                <ul className="price-list">
-                  <li>
-                    <i className="far fa-check" />
-                    Up to 50Mbps
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    Night Turbo-Speed
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    WiFi router
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    Unlimited devices
-                  </li>
-                </ul>
-                <div className="price">
-                  $24.99 <span> | month </span>
-                </div>
-                <Link href="pricing" className="theme-btn">
-                  <span>Get started</span>
-                </Link>
-              </div>
-            </div>
-            <div
-              className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp"
-              data-wow-delay=".4s"
-            >
-              <div className="pricing-card-items">
-                <div className="pricing-header">
-                  <h6>TV</h6>
-                  <h3>Impression</h3>
-                </div>
-                <ul className="icon-items">
-                  <li>
-                    <i className="flaticon-smart-tv" />
-                  </li>
-                </ul>
-                <ul className="price-list">
-                  <li>
-                    <i className="far fa-check" />
-                    Up to 50Mbps
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    Night Turbo-Speed
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    WiFi router
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    Unlimited devices
-                  </li>
-                </ul>
-                <div className="price">
-                  $18.99 <span> | month </span>
-                </div>
-                <Link href="pricing" className="theme-btn">
-                  <span>Get started</span>
-                </Link>
-              </div>
-            </div>
-            <div
-              className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp"
-              data-wow-delay=".6s"
-            >
-              <div className="pricing-card-items">
-                <span className="tag">popular</span>
-                <div className="pricing-header">
-                  <h6>Internet + TV</h6>
-                  <h3>Home Comfort</h3>
-                </div>
-                <ul className="icon-items">
-                  <li>
-                    <i className="flaticon-connection" />
-                  </li>
-                  <li>
-                    <i className="flaticon-smart-tv" />
-                  </li>
-                </ul>
-                <ul className="price-list">
-                  <li>
-                    <i className="far fa-check" />
-                    Up to 50Mbps
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    Night Turbo-Speed
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    WiFi router
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    Unlimited devices
-                  </li>
-                </ul>
-                <div className="price">
-                  $37.99 <span> | month </span>
-                </div>
-                <Link href="pricing" className="theme-btn">
-                  <span>Get started</span>
-                </Link>
-              </div>
-            </div>
-            <div
-              className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp"
-              data-wow-delay=".8s"
-            >
-              <div className="pricing-card-items">
-                <div className="pricing-header">
-                  <h6>Internet + TV + Phone</h6>
-                  <h3>Premium Plan</h3>
-                </div>
-                <ul className="icon-items">
-                  <li>
-                    <i className="flaticon-connection" />
-                  </li>
-                  <li>
-                    <i className="flaticon-smart-tv" />
-                  </li>
-                  <li>
-                    <i className="flaticon-smart-tv-3" />
-                  </li>
-                </ul>
-                <ul className="price-list">
-                  <li>
-                    <i className="far fa-check" />
-                    Up to 50Mbps
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    Night Turbo-Speed
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    WiFi router
-                  </li>
-                  <li>
-                    <i className="far fa-check" />
-                    Unlimited devices
-                  </li>
-                </ul>
-                <div className="price">
-                  $49.99 <span> | month </span>
-                </div>
-                <Link href="pricing" className="theme-btn">
-                  <span>Get started</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/*<< Cta Subscribe Section Start >>*/}
       <section className="cta-subscribe-section fix section-padding">
         <div className="container custom-container-2">
@@ -1225,49 +1090,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/*<< Counter Section Start >>*/}
-      <section className="counter-section">
-        <div className="container">
-          <div className="counter-wrapper">
-            <div className="counter-items wow fadeInUp" data-wow-delay=".2s">
-              <h2>
-                <span className="count">20</span>+
-              </h2>
-              <p>
-                YEARS OF <br />
-                EXPERIENCE
-              </p>
-            </div>
-            <div className="counter-items wow fadeInUp" data-wow-delay=".4s">
-              <h2>
-                <span className="count">220</span>k
-              </h2>
-              <p>
-                CLIENTS IN <br />
-                THE WORLD
-              </p>
-            </div>
-            <div className="counter-items wow fadeInUp" data-wow-delay=".6s">
-              <h2>
-                <span className="count">2,5</span>k
-              </h2>
-              <p>
-                KILOMETERS <br />
-                OF FIBERS
-              </p>
-            </div>
-            <div className="counter-items wow fadeInUp" data-wow-delay=".8s">
-              <h2>
-                <span className="count">991</span>
-              </h2>
-              <p>
-                SATELLITE <br />
-                CHANNELS
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       {/*<< Testimonial Section Start >>*/}
       <section className="testimonial-section section-padding fix">
         <div className="container">

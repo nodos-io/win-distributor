@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import Menus from "./Menus";
 import Offcanvas from "./Offcanvas";
-import Search from "./Search";
 
 const Header = ({ header, single, menus }) => {
   const [sidebarToggle, setSidebarToggle] = useState(false);
@@ -17,6 +16,10 @@ const Header = ({ header, single, menus }) => {
         return (
           <Header1 openSidebar={openSidebar} single={single} menus={menus} />
         );
+      case 2:
+        return (
+          <Header2 openSidebar={openSidebar} single={single} menus={menus} />
+        );
       case 3:
         return (
           <Header3 openSidebar={openSidebar} single={single} menus={menus} />
@@ -27,10 +30,11 @@ const Header = ({ header, single, menus }) => {
         );
       default:
         return (
-          <Header2 openSidebar={openSidebar} single={single} menus={menus} />
+          <Header1 openSidebar={openSidebar} single={single} menus={menus} />
         );
     }
   };
+
   return (
     <Fragment>
       {headerChoose(header)}
@@ -39,26 +43,10 @@ const Header = ({ header, single, menus }) => {
         closeSidebar={closeSidebar}
         single={single}
       />
-      <Search />
     </Fragment>
   );
 };
 export default Header;
-
-const SearchBtn = () => {
-  const onClick = () => {
-    document.querySelector(".search-wrap").classList.add("d-block");
-  };
-  return (
-    <a
-      href="#0"
-      className="search-trigger search-icon"
-      onClick={() => onClick()}
-    >
-      <i className="fal fa-search" />
-    </a>
-  );
-};
 
 const Header1 = ({ openSidebar, single, menus }) => {
   return (
@@ -67,44 +55,8 @@ const Header1 = ({ openSidebar, single, menus }) => {
         <div className="container">
           <div className="header-top-wrapper">
             <ul className="contact-list">
-              <li>
-                <i className="far fa-envelope" />
-                <a href="mailto:info@example.com" className="link">
-                  info@example.com
-                </a>
-              </li>
-              <li>
-                <i className="fas fa-map-marker-alt" />
-                55 Main Street, 2nd block, Malborne ,Australia
-              </li>
+              <li>EL INTERNET HOGAR #1 EN SATISFACCION AL CLIENTE</li>
             </ul>
-            <div className="top-right">
-              <div className="social-icon d-flex align-items-center">
-                <a href="#">
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a href="#">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a href="#">
-                  <i className="fab fa-vimeo-v" />
-                </a>
-                <a href="#">
-                  <i className="fab fa-pinterest-p" />
-                </a>
-              </div>
-              <ul className="header-menu">
-                <li>
-                  <Link href="contact">Help</Link>
-                </li>
-                <li>
-                  <Link href="contact">Support</Link>
-                </li>
-                <li>
-                  <Link href="faq">Faqs</Link>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -127,24 +79,29 @@ const Header1 = ({ openSidebar, single, menus }) => {
                 </div>
                 <div className="header-right d-flex justify-content-end align-items-center">
                   <div className="contact-info">
-                    <div className="icon">
-                      <img src="assets/img/call.png" alt="img" />
-                    </div>
                     <div className="content">
-                      <p>Phone:</p>
+                      <p>Llámanos al:</p>
                       <h6>
-                        <a href="tel:+23645689622">+236 (456) 896 22</a>
+                        <a
+                          href={`https://wa.me/51934867509?text=${encodeURIComponent(
+                            `¡Hola! Soy tu asesora WIN.\nTe ayudo a activar tu internet en casa, sin costo de instalación y con buena señal garantizada.\n¿Quieres que te brinde más información?`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => closeSidebar()}
+                        >
+                          934867509
+                        </a>
                       </h6>
                     </div>
                   </div>
                   <div className="header-button">
-                    <Link href="contact" className="link-btn">
-                      <span>Contact us</span>
+                    <button className="link-btn contact-us-popup-modal">
+                      <span>Contáctenos</span>
                       <i className="fas fa-chevron-right" />
-                    </Link>
+                    </button>
                   </div>
-                  <SearchBtn />
-                  <div className="header__hamburger d-xl-none my-auto">
+                  <div className="header__hamburger d-lg-none my-auto">
                     <div
                       className="sidebar__toggle"
                       onClick={() => openSidebar()}
@@ -254,7 +211,6 @@ const Header2 = ({ openSidebar, single, menus }) => {
                     <i className="far fa-shopping-cart" />
                   </Link>
                 </div>
-                <SearchBtn />
                 <div className="header-button">
                   <Link href="contact" className="theme-btn">
                     <span>
@@ -409,7 +365,6 @@ const Header4 = ({ openSidebar, single, menus }) => {
               </div>
             </div>
             <div className="header-right d-flex justify-content-end align-items-center">
-              <SearchBtn />
               <div className="header-button">
                 <Link href="contact" className="theme-btn">
                   <span>

@@ -25,11 +25,7 @@ export const sliderProps = {
     loop: true,
     slidesPerView: 1,
     effect: "fade",
-    speed: 3000,
-    autoplay: {
-      delay: 7000,
-      disableOnInteraction: false,
-    },
+    autoplay: false,
     navigation: {
       nextEl: ".array-prev",
       prevEl: ".array-next",
@@ -51,6 +47,32 @@ export const sliderProps = {
     pagination: {
       el: ".dot",
       clickable: true,
+    },
+  },
+  planSlider: {
+    spaceBetween: 20,
+    speed: 2000,
+    loop: false,
+    pagination: {
+      el: ".dot",
+      clickable: true,
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 4,
+      },
+      991: {
+        slidesPerView: 3,
+      },
+      767: {
+        slidesPerView: 2,
+      },
+      575: {
+        slidesPerView: 1,
+      },
+      0: {
+        slidesPerView: 1,
+      },
     },
   },
   movieSlider: {

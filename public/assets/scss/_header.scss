@@ -4,21 +4,6 @@
 	padding: 10px 0;
 	position: relative;
 	z-index: 9;
-
-	@include breakpoint (max-lg){
-		display: none;
-	}
-
-	&::before {
-		@include before;
-		background-color: $theme-color;
-		z-index: -1;
-		left: 73%;
-
-		@include breakpoint (max-xl4){
-			display: none;
-		}
-	}
 }
 
 .header-top-section-2 {
@@ -48,7 +33,7 @@
 
 .header-top-wrapper {
 	@include flex;
-	justify-content: space-between;
+	justify-content: center;
 
 	.contact-list {
 		@include flex;
@@ -65,6 +50,10 @@
 			i {
 				color: $theme-color;
 				margin-right: 10px;
+			}
+
+			@include breakpoint (max-lg){
+				font-size: 12px;
 			}
 		}
 	}
@@ -359,22 +348,6 @@
 	background-color: $white;
 	box-shadow: $shadow;
 	z-index: 999;
-	
-	&::before {
-		position: absolute;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		height: 100%;
-		width: 110px;
-		content: "";
-		background-color: $theme-color;
-		z-index: -1;
-
-		@include breakpoint (max-xl4){
-			display: none !important;
-		}
-	}
 }
 
 .header-section-2 {
@@ -389,7 +362,7 @@
 }
 
 .menu-thumb {
-	@include breakpoint (max-xl){
+	@include breakpoint (max-lg){
 		display: none !important;
 	}
 }
@@ -683,7 +656,7 @@
 					@include flex;
 					gap: 20px;
 
-					@include breakpoint (max-xxxl){
+					@include breakpoint (max-lg){
 						display: none !important;
 					}
 
@@ -695,12 +668,6 @@
 						h6 {
 							font-size: 16px;
 						}
-					}
-				}
-
-				.header-button {
-					@include breakpoint (max-xxl){
-						display: none !important;
 					}
 				}
 

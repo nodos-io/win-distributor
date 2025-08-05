@@ -1,58 +1,32 @@
 "use client";
-import { netBandUtility } from "@/utility";
 import { useEffect } from "react";
+import Script from 'next/script';
+import Hotjar from '@hotjar/browser';
 
 const Preloader = () => {
+  // Initialize Hotjar with your site ID and version
   useEffect(() => {
-    netBandUtility.preloader();
+    const siteId = 6459755;
+    const hotjarVersion = 6;
+    Hotjar.init(siteId, hotjarVersion);
   }, []);
 
   return (
-    <div id="preloader" className="preloader">
-      <div className="animation-preloader">
-        <div className="spinner"></div>
-        <div className="txt-loading">
-          <span data-text-preloader="N" className="letters-loading">
-            N
-          </span>
-          <span data-text-preloader="E" className="letters-loading">
-            E
-          </span>
-          <span data-text-preloader="T" className="letters-loading">
-            T
-          </span>
-          <span data-text-preloader="B" className="letters-loading">
-            B
-          </span>
-          <span data-text-preloader="A" className="letters-loading">
-            A
-          </span>
-          <span data-text-preloader="N" className="letters-loading">
-            N
-          </span>
-          <span data-text-preloader="D" className="letters-loading">
-            D
-          </span>
-        </div>
-        <p className="text-center">Loading</p>
-      </div>
-      <div className="loader">
-        <div className="row">
-          <div className="col-3 loader-section section-left">
-            <div className="bg" />
-          </div>
-          <div className="col-3 loader-section section-left">
-            <div className="bg" />
-          </div>
-          <div className="col-3 loader-section section-right">
-            <div className="bg" />
-          </div>
-          <div className="col-3 loader-section section-right">
-            <div className="bg" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      {/* Google Analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-C23SB4MCFR"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-C23SB4MCFR');
+        `}
+      </Script>
+    </>
   );
 };
 export default Preloader;

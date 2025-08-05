@@ -1,0 +1,155 @@
+// Contact Us Form Styles
+.contact-us-container{
+  h3{
+    text-transform: none;
+  }
+  form#contact-us-form{
+    label.form-contact-privacy{
+      font-size: 12px;
+      a{
+        color: $theme-color;
+        text-decoration: underline;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+
+    input#privacyPolicy{
+      font-size: 12px;
+      margin-top: 0.75em;
+    }
+
+    .row> div{
+      margin-top: 0.75rem;
+    }
+
+    .form-check{
+      padding-left: 1.25em;
+    }
+  }
+}
+
+// Hero Slider
+.hero-1 {
+  @include breakpoint(max-lg){
+    .swiper-mobile-slide {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-image {
+      &::before {
+        opacity: 0.15;
+      }
+      position: relative !important;
+      background-size: cover;
+      min-height: 220px;
+    }
+    .container{
+      .hero-content{
+        padding: 0 !important;
+        .shadow{
+          box-shadow: none !important;
+        }
+        .contact-us-container{
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+    br {
+      display: block;
+    }
+  }
+    
+  .hero-prefix-subtitle{
+    margin-left: 0 !important;
+  }
+}
+
+// Feature Icon
+section.feature-icon-box-area{
+  .container{
+    max-width: fit-content;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .feature-icon-box-wrapper{
+    margin-top: 0;
+  }
+}
+
+// Pricing Card
+.pricing-section{
+  .pricing-header{
+    s{
+      font-size: 16px;
+    }
+  }
+  .price{
+    s{
+      font-size: 14px;
+      color: black;
+    }
+  }
+}
+
+// Counter Section
+.counter-section{
+  .container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .counter-wrapper{
+      margin-top: 0;
+    }
+  }
+}
+
+// Whatsapp Chat Icon
+.wa-chat-icon {
+  display: flex;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+
+  img {
+    margin: auto;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
+
+@media (max-width: 991px) {
+  .wa-chat-icon {
+    width: 54px;
+    height: 54px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+// Privacy Policy
+.privacy-policy-wrapper{
+  ul{
+    margin-top: 0 !important;
+    li{
+      list-style-type: initial !important;
+      padding-left: 0 !important;
+      font-size: 16px !important;
+      &::before {
+        content: none !important;
+        position: static !important;
+        font-family: inherit !important;
+      }
+    }
+  }
+}
