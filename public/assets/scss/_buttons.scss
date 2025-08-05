@@ -29,7 +29,7 @@
         z-index: 9;
     }
 
-	&::after {
+	&:not(.btn-form-disabled)::after {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -42,7 +42,7 @@
         z-index: 1;
 	}
 
-	&::before {
+	&:not(.btn-form-disabled)::before {
         position: absolute;
         bottom: 0;
         left: 0;
