@@ -13,7 +13,7 @@ const page = () => {
                 <div className="blog-post-details border-wrap mt-0">
                   <div className="single-blog-post post-details mt-0">
                     <div className="post-content pt-0">
-                      <h2 class="mt-0 mb-4">POLÍTICA DE PRIVACIDAD Y TRATAMIENTO DE DATOS PERSONALES</h2>
+                      <h2 className="mt-0 mb-4">POLÍTICA DE PRIVACIDAD Y TRATAMIENTO DE DATOS PERSONALES</h2>
                       <p>
                         En cumplimiento de lo dispuesto en la Ley N.º 29733 – Ley de Protección de Datos Personales, su Reglamento aprobado mediante D.S. N.º 003-2013-JUS y demás normas complementarias, <strong>R&amp;F CONTACT CENTER S.A.C.</strong>, con RUC N.° 20614387964 y domicilio en Av. Palmeras 3896, Los Olivos, Lima, informa lo siguiente:
                       </p>

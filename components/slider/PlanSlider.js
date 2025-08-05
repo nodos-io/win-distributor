@@ -45,7 +45,7 @@ const PlanSlider = () => {
               <div className="price">
                 S/99.90 <span> para siempre </span>
               </div>
-              <button className="theme-btn popup-modal">
+              <button className="theme-btn contact-us-popup-modal">
                 <span>Quiero Este Plan</span>
               </button>
             </div>
@@ -82,7 +82,7 @@ const PlanSlider = () => {
               <div className="price">
                 <s>S/119.00</s> S/ 89.00 <span> | mensual </span>
               </div>
-              <button className="theme-btn popup-modal">
+              <button className="theme-btn contact-us-popup-modal">
                 <span>Quiero Este Plan</span>
               </button>
             </div>
@@ -123,7 +123,7 @@ const PlanSlider = () => {
               <div className="price">
                 <s>S/129.00</s> S/ 99.00 <span> | mensual </span>
               </div>
-              <button className="theme-btn popup-modal">
+              <button className="theme-btn contact-us-popup-modal">
                 <span>Quiero Este Plan</span>
               </button>
             </div>
@@ -166,7 +166,7 @@ const PlanSlider = () => {
               <div className="price">
                 <s>S/136.00</s> S/ 109.00 <span> | mensual </span>
               </div>
-              <button className="theme-btn popup-modal">
+              <button className="theme-btn contact-us-popup-modal">
                 <span>Quiero Este Plan</span>
               </button>
             </div>
@@ -209,7 +209,7 @@ const PlanSlider = () => {
               <div className="price">
                 <s>S/159.00</s> S/ 129.00 <span> | mensual </span>
               </div>
-              <button className="theme-btn popup-modal">
+              <button className="theme-btn contact-us-popup-modal">
                 <span>Quiero Este Plan</span>
               </button>
             </div>

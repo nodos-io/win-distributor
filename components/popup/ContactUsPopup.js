@@ -3,7 +3,7 @@ import useClickOutside from "@/utility/useClickOutside";
 import { Fragment, useEffect, useState } from "react";
 import ContactUsForm from "@/components/form/ContactUsForm";
 
-const Popup_ = ({ close }) => {
+const ContactUsPopup_ = ({ close }) => {
   const domNode = useClickOutside(() => {
     close(false);
   });
@@ -28,19 +28,19 @@ const Popup_ = ({ close }) => {
             </button>
             <ContactUsForm/>
           </div>
-          <div className="mfp-preloader">Loading...</div>
+          <div className="mfp-preloader">Cargando...</div>
         </div>
       </div>
     </Fragment>
   );
 };
 
-const Popup = () => {
+const ContactUsPopup = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const timerId = setTimeout(() => {
-      const popups = document.querySelectorAll(".popup-modal");
+      const popups = document.querySelectorAll(".contact-us-popup-modal");
       popups.forEach((popup) => {
         popup.addEventListener("click", (e) => {
           e.preventDefault();
@@ -54,8 +54,8 @@ const Popup = () => {
   }, []);
 
   return (
-    open && <Popup_ close={() => setOpen(false)} />
+    open && <ContactUsPopup_ close={() => setOpen(false)} />
   );
 };
 
-export default Popup;
+export default ContactUsPopup;

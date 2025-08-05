@@ -96,7 +96,7 @@ const Header1 = ({ openSidebar, single, menus }) => {
                     </div>
                   </div>
                   <div className="header-button">
-                    <button className="link-btn popup-modal">
+                    <button className="link-btn contact-us-popup-modal">
                       <span>Contáctenos</span>
                       <i className="fas fa-chevron-right" />
                     </button>

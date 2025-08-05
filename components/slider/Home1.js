@@ -1,8 +1,6 @@
 "use client";
-import { netBandUtility } from "@/utility";
 import { sliderProps } from "@/utility/sliderProps";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactUsForm from "../form/ContactUsForm";
 

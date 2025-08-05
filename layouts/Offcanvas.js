@@ -44,7 +44,7 @@ const Offcanvas = ({ closeSidebar, sidebar, single }) => {
                   </li>
                 </ul>
                 <div className="header-button mt-4">
-                  <button href="contact" className="theme-btn text-center popup-modal" onClick={() => closeSidebar()}>
+                  <button href="contact" className="theme-btn text-center contact-us-popup-modal" onClick={() => closeSidebar()}>
                     <span>
                       Contáctenos
                       <i className="fas fa-chevron-right" />
