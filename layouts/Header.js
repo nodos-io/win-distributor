@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import Menus from "./Menus";
 import Offcanvas from "./Offcanvas";
+import {WHATSAPP_PHONE_LINK} from "@/lib/constants";
 
 const Header = ({ header, single, menus }) => {
   const [sidebarToggle, setSidebarToggle] = useState(false);
@@ -83,9 +84,7 @@ const Header1 = ({ openSidebar, single, menus }) => {
                       <p>Llámanos al:</p>
                       <h6>
                         <a
-                          href={`https://wa.me/51934867509?text=${encodeURIComponent(
-                            `¡Hola! Soy tu asesora WIN.\nTe ayudo a activar tu internet en casa, sin costo de instalación y con buena señal garantizada.\n¿Quieres que te brinde más información?`
-                          )}`}
+                          href={`${WHATSAPP_PHONE_LINK}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => closeSidebar()}
