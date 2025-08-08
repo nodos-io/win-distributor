@@ -153,3 +153,23 @@ section.feature-icon-box-area{
     }
   }
 }
+
+// Footer
+.footer-section{
+  padding-top: 0 !important;
+  .footer-widgets-wrapper{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    .support-text{
+      margin-top: 0 !important;
+      p{
+        margin-bottom: 0 !important;
+      };
+    }
+    @media (max-width: 991px) {
+      .footer-column-list{
+        display: none;
+      }
+    }
+  }
+}

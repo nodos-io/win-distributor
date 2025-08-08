@@ -1,195 +1,53 @@
 import Link from "next/link";
+import {WHATSAPP_PHONE_LINK} from "@/lib/constants";
 
 const Footer = ({ footer }) => {
   switch (footer) {
     case 1:
       return <Footer1 />;
+    case 2:
+      return <Footer2 />;
     case 3:
       return <Footer3 />;
     case 4:
       return <Footer4 />;
-
     default:
-      return <Footer2 />;
+      return <Footer1 />;
   }
 };
 export default Footer;
 
 const Footer1 = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="footer-section footer-bg section-padding pb-0">
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-7">
-            <div className="newsletter-area">
-              <div className="shape-1">
-                <img src="assets/img/footer-shape.png" alt="shape-img" />
-              </div>
-              <div className="shape-2">
-                <img src="assets/img/footer-shape-2.png" alt="shape-img" />
-              </div>
-              <div className="newsletter-title">
-                <h2 className="wow fadeInUp" data-wow-delay=".3s">
-                  Join Our Newsletter
-                </h2>
-                <p className="wow fadeInUp" data-wow-delay=".5s">
-                  We Provide Best Pricing package to grow your lead capture
-                </p>
-              </div>
-              <div className="newsletter-items">
-                <div className="form-clt wow fadeInUp" data-wow-delay=".3s">
-                  <input
-                    type="text"
-                    name="email"
-                    id="email2"
-                    placeholder="Email Address"
-                  />
-                </div>
-                <button
-                  className="theme-btn hover-white wow fadeInUp"
-                  data-wow-delay=".5s"
-                  type="submit"
-                >
-                  <span>
-                    Subscribe <i className="fas fa-chevron-right" />
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="footer-widgets-wrapper">
           <div className="row">
             <div
-              className="col-xl-3 col-sm-6 col-md-6 col-lg-3 wow fadeInUp"
+              className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 wow fadeInUp"
               data-wow-delay=".2s"
             >
               <div className="single-footer-widget">
                 <div className="widget-head">
                   <Link href="/">
-                    <img src="assets/img/logo/footer-logo.svg" alt="logo-img" />
+                    <img src="assets/img/logo/logo.svg" alt="logo-img" />
                   </Link>
                 </div>
-                <div className="footer-content">
-                  <p>
-                    We believe it has the power to do <br />
-                    amazing things.
-                  </p>
-                  <span>Interested in working with us?</span> <br />
-                  <a href="mailto:info@example.com" className="link">
-                    info@example.com
-                  </a>
-                  <div className="social-icon d-flex align-items-center">
-                    <a href="#">
-                      <i className="fab fa-facebook-f" />
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-twitter" />
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-vimeo-v" />
-                    </a>
-                    <a href="#">
-                      <i className="fab fa-pinterest-p" />
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
             <div
-              className="col-xl-2 ps-lg-5 col-sm-6 col-md-3 col-lg-3 wow fadeInUp"
-              data-wow-delay=".4s"
-            >
-              <div className="single-footer-widget">
-                <div className="widget-head">
-                  <h5>Quick Links</h5>
-                </div>
-                <ul className="list-items">
-                  <li>
-                    <Link href="service-details">Services</Link>
-                  </li>
-                  <li>
-                    <Link href="about">About company</Link>
-                  </li>
-                  <li>
-                    <Link href="news-details">latest news</Link>
-                  </li>
-                  <li>
-                    <Link href="team">team member</Link>
-                  </li>
-                  <li>
-                    <Link href="testimonial">testimonials</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div
-              className="col-xl-2 ps-lg-4 col-sm-6 col-md-3 col-lg-3 wow fadeInUp"
-              data-wow-delay=".6s"
-            >
-              <div className="single-footer-widget">
-                <div className="widget-head">
-                  <h5>My account</h5>
-                </div>
-                <ul className="list-items">
-                  <li>
-                    <Link href="contact">Forum Support</Link>
-                  </li>
-                  <li>
-                    <Link href="faq">Help &amp; FAQ</Link>
-                  </li>
-                  <li>
-                    <Link href="contact">Contact Us</Link>
-                  </li>
-                  <li>
-                    <Link href="pricing">Pricing and plans</Link>
-                  </li>
-                  <li>
-                    <Link href="contact">Cookies Policy</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div
-              className="col-xl-2 col-sm-6 col-md-6 col-lg-3 wow fadeInUp"
-              data-wow-delay=".8s"
-            >
-              <div className="single-footer-widget">
-                <div className="widget-head">
-                  <h5>Address:</h5>
-                </div>
-                <div className="footer-address-text">
-                  <p>570 8th Ave, New York,NY 10018 United States</p>
-                  <h5>Hours:</h5>
-                  <p>
-                    9.30am – 6.30pm <br />
-                    Monday to Friday
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-xl-3 ps-xl-5 col-sm-6 col-md-6 col-lg-4 wow fadeInUp"
+              className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2 offset-lg-2 offset-xl-7 wow fadeInUp"
               data-wow-delay=".9s"
             >
-              <div className="single-footer-widget">
+              <div className="single-footer-widget text-end">
                 <div className="widget-head">
-                  <h5>Install app</h5>
                 </div>
                 <div className="footer-apps-items">
-                  <p>From App Store or Google Play</p>
-                  <div className="apps-image d-flex align-items-center">
-                    <a href="#">
-                      <img src="assets/img/app-store.png" alt="store-img" />
-                    </a>
-                    <a href="#">
-                      <img src="assets/img/google-play.png" alt="store-img" />
-                    </a>
-                  </div>
                   <div className="support-text">
-                    <p>24/7 Support center</p>
+                    <p>Llámanos al</p>
                     <h3>
-                      <a href="tel:+1718-904-4450">+1718-904-4450</a>
+                      <a href={`${WHATSAPP_PHONE_LINK}`} target="_blank">934867509</a>
                     </h3>
                   </div>
                 </div>
@@ -202,21 +60,11 @@ const Footer1 = () => {
         <div className="container">
           <div className="footer-wrapper d-flex align-items-center justify-content-between">
             <p className="wow fadeInLeft color-2" data-wow-delay=".3s">
-              Copyright © 2024 <Link href="/">Modinatheme</Link>. All Rights
-              Reserved.
+              RYFCONTACTCENTER © {currentYear}. Todos los derechos reservados
             </p>
             <ul className="footer-menu wow fadeInRight" data-wow-delay=".5s">
               <li>
-                <Link href="about">Company</Link>
-              </li>
-              <li>
-                <Link href="contact">Support</Link>
-              </li>
-              <li>
-                <Link href="contact">Privacy</Link>
-              </li>
-              <li>
-                <Link href="faq">Faqs</Link>
+                <Link href="politica-privacidad">Política de Privacidad</Link>
               </li>
             </ul>
           </div>
