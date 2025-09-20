@@ -9,7 +9,7 @@ const Menus = ({ single, menus }) => {
           <Link href="/">Mono</Link>
         </li>
         <li className="d-lg-none">
-          <Link href="mono" className="border-none">Mono</Link>
+          <Link href="/" className="border-none">Mono</Link>
         </li>
         <li>
           <Link href="duos">Dúos</Link>
