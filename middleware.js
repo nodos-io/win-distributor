@@ -6,6 +6,8 @@ export function middleware(request) {
   const primaryDomain = "wininternetperu.com";
   const secondaryDomain = "winplangamer.com";
 
+  console.log('host', host);
+
   // Handle secondary domain redirect
   if (host === secondaryDomain) {
     const url = request.nextUrl.clone();
