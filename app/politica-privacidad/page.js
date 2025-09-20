@@ -1,7 +1,7 @@
-import BlogSideBar from "@/components/BlogSideBar";
-import Breadcrumb from "@/components/Breadcrumb";
 import NetBandLayout from "@/layouts/NetBandLayout";
+import { COMPANY_INFO } from "@/lib/constants";
 import Link from "next/link";
+
 const page = () => {
   return (
     <NetBandLayout>
@@ -15,13 +15,13 @@ const page = () => {
                     <div className="post-content pt-0">
                       <h2 className="mt-0 mb-4">POLÍTICA DE PRIVACIDAD Y TRATAMIENTO DE DATOS PERSONALES</h2>
                       <p>
-                        En cumplimiento de lo dispuesto en la Ley N.º 29733 – Ley de Protección de Datos Personales, su Reglamento aprobado mediante D.S. N.º 003-2013-JUS y demás normas complementarias, <strong>R&amp;F CONTACT CENTER S.A.C.</strong>, con RUC N.° 20614387964 y domicilio en Av. Palmeras 3896, Los Olivos, Lima, informa lo siguiente:
+                        En cumplimiento de lo dispuesto en la Ley N.º 29733 – Ley de Protección de Datos Personales, su Reglamento aprobado mediante D.S. N.º 003-2013-JUS y demás normas complementarias, <strong>{COMPANY_INFO.NAME}</strong>, con RUC N.° {COMPANY_INFO.RUC} y domicilio en {COMPANY_INFO.ADDRESS}, informa lo siguiente:
                       </p>
                       <ol>
                         <li>
                           <strong>Identidad y domicilio del titular del banco de datos personales</strong>
                           <p>
-                            La responsable del tratamiento de los datos personales es <strong>R&amp;F CONTACT CENTER S.A.C.</strong>, en calidad de agencia comercial autorizada para la promoción y atención de solicitudes vinculadas a los servicios de WIN Internet, actuando conforme a los principios de legalidad, consentimiento, proporcionalidad, seguridad, calidad y finalidad establecidos por la Ley.
+                            La responsable del tratamiento de los datos personales es <strong>{COMPANY_INFO.NAME}</strong>, en calidad de agencia comercial autorizada para la promoción y atención de solicitudes vinculadas a los servicios de WIN Internet, actuando conforme a los principios de legalidad, consentimiento, proporcionalidad, seguridad, calidad y finalidad establecidos por la Ley.
                           </p>
                         </li>
                         <li>
@@ -59,8 +59,22 @@ const page = () => {
                           </ul>
                           <p>Para ejercer estos derechos, puede contactarnos a:</p>
                           <ul style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}>
-                            <li><strong>Correo electrónico:</strong> <a href="mailto:adm@ryfcontactcenter.pe">adm@ryfcontactcenter.pe</a></li>
-                            <li><strong>Teléfono/WhatsApp:</strong> <a href="https://wa.me/51934867509" target="_blank" rel="noopener noreferrer">934 867 509</a></li>
+                            <li>
+                              <strong>Correo electrónico:</strong>&nbsp;
+                              <Link href={`mailto:${COMPANY_INFO.EMAIL}`}>
+                                {COMPANY_INFO.EMAIL}
+                              </Link>
+                            </li>
+                            <li>
+                              <strong>Teléfono/WhatsApp:</strong>&nbsp;
+                              <Link 
+                                href={COMPANY_INFO.WHATSAPP.URL()} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                              >
+                                {COMPANY_INFO.PHONE}
+                              </Link>
+                            </li>
                           </ul>
                           <p>
                             Su solicitud será atendida conforme a los plazos establecidos en el artículo 55° del Reglamento de la Ley.
@@ -69,7 +83,7 @@ const page = () => {
                         <li>
                           <strong>Medidas de seguridad</strong>
                           <p>
-                            R&amp;F CONTACT CENTER S.A.C. adopta medidas técnicas, organizativas y legales razonables para garantizar la seguridad, confidencialidad e integridad de los datos personales, evitando su alteración, pérdida, tratamiento o acceso no autorizado.
+                            {COMPANY_INFO.NAME} adopta medidas técnicas, organizativas y legales razonables para garantizar la seguridad, confidencialidad e integridad de los datos personales, evitando su alteración, pérdida, tratamiento o acceso no autorizado.
                           </p>
                         </li>
                         <li>
@@ -90,4 +104,5 @@ const page = () => {
     </NetBandLayout>
   );
 };
+
 export default page;

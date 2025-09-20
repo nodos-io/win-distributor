@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import Menus from "./Menus";
 import Offcanvas from "./Offcanvas";
-import {WHATSAPP_PHONE_LINK} from "@/lib/constants";
+import {WHATSAPP_PHONE_LINK, WHATSAPP_PHONE_CLEAN} from "@/lib/constants";
 
 const Header = ({ header, single, menus }) => {
   const [sidebarToggle, setSidebarToggle] = useState(false);
@@ -89,7 +89,7 @@ const Header1 = ({ openSidebar, single, menus }) => {
                           rel="noopener noreferrer"
                           onClick={() => closeSidebar()}
                         >
-                          934867509
+                          {WHATSAPP_PHONE_CLEAN}
                         </a>
                       </h6>
                     </div>

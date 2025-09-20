@@ -20,13 +20,7 @@ Tools
 
 Pending
 
-1. contact us form with google sheets
-2. font
-3. hero slider, a donde van?
-4. hero mobile
 5. fb pixel
-6. politica de privacidad
-7. planes, cual es el recomendado?
-8. planes, iconos
-9. planes, guardar plan si llena formulario
-10. whatsapp floating button
+6. planes, cual es el recomendado?
+7. planes, iconos
+8. planes, guardar plan si llena formulario
