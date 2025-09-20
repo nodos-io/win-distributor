@@ -1,5 +1,6 @@
 import Link from "next/link";
-import {WHATSAPP_PHONE_LINK} from "@/lib/constants";
+import {WHATSAPP_PHONE_LINK,WHATSAPP_PHONE_CLEAN} from "@/lib/constants";
+import { COMPANY_INFO } from "@/lib/constants";
 
 const Footer = ({ footer }) => {
   switch (footer) {
@@ -47,7 +48,7 @@ const Footer1 = () => {
                   <div className="support-text">
                     <p>Llámanos al</p>
                     <h3>
-                      <a href={`${WHATSAPP_PHONE_LINK}`} target="_blank">934867509</a>
+                      <a href={`${WHATSAPP_PHONE_LINK}`} target="_blank">{WHATSAPP_PHONE_CLEAN}</a>
                     </h3>
                   </div>
                 </div>
@@ -60,7 +61,7 @@ const Footer1 = () => {
         <div className="container">
           <div className="footer-wrapper d-flex align-items-center justify-content-between">
             <p className="wow fadeInLeft color-2" data-wow-delay=".3s">
-              RYFCONTACTCENTER © {currentYear}. Todos los derechos reservados
+              {COMPANY_INFO.NAME} © {currentYear}. Todos los derechos reservados
             </p>
             <ul className="footer-menu wow fadeInRight" data-wow-delay=".5s">
               <li>
