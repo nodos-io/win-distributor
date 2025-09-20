@@ -140,7 +140,7 @@ const page = () => {
                   </div>
                   <div className="faq-content">
                     <div className="faq-accordion">
-                      <NetBandAccordion items={faqItem} />
+                      {/* <NetBandAccordion items={faqItem} /> */}
                     </div>
                   </div>
                 </div>

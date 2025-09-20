@@ -1304,7 +1304,7 @@ const page = () => {
                     </h2>
                   </div>
                   <div className="faq-accordion mt-4 mt-md-0">
-                    <NetBandAccordion />
+                    {/* <NetBandAccordion /> */}
                   </div>
                 </div>
               </div>

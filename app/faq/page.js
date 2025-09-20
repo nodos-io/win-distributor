@@ -125,35 +125,35 @@ const page = () => {
                       <Tab.Pane eventKey="general" className="tab-pane fade">
                         <div className="faq-content">
                           <div className="faq-accordion">
-                            <NetBandAccordion items={faqItem} />
+                            {/* <NetBandAccordion items={faqItem} /> */}
                           </div>
                         </div>
                       </Tab.Pane>
                       <Tab.Pane eventKey="service" className="tab-pane fade">
                         <div className="faq-content">
                           <div className="faq-accordion">
-                            <NetBandAccordion items={faqItem} />
+                            {/* <NetBandAccordion items={faqItem} /> */}
                           </div>
                         </div>
                       </Tab.Pane>
                       <Tab.Pane eventKey="product" className="tab-pane fade">
                         <div className="faq-content">
                           <div className="faq-accordion">
-                            <NetBandAccordion items={faqItem} />
+                            {/* <NetBandAccordion items={faqItem} /> */}
                           </div>
                         </div>
                       </Tab.Pane>
                       <Tab.Pane eventKey="team" className="tab-pane fade">
                         <div className="faq-content">
                           <div className="faq-accordion">
-                            <NetBandAccordion items={faqItem} />
+                            {/* <NetBandAccordion items={faqItem} /> */}
                           </div>
                         </div>
                       </Tab.Pane>
                       <Tab.Pane eventKey="pricing" className="tab-pane fade">
                         <div className="faq-content">
                           <div className="faq-accordion">
-                            <NetBandAccordion items={faqItem} />
+                            {/* <NetBandAccordion items={faqItem} /> */}
                           </div>
                         </div>
                       </Tab.Pane>
@@ -227,7 +227,7 @@ const page = () => {
               <div className="col-lg-6 mt-5 mt-lg-0">
                 <div className="faq-content style-2 style-color">
                   <div className="faq-accordion">
-                    <NetBandAccordion items={faqItem} />
+                    {/* <NetBandAccordion items={faqItem} /> */}
                   </div>
                 </div>
               </div>
