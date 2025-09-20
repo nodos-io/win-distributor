@@ -1331,11 +1331,11 @@ const page = () => {
               </div>
               <div className="col-lg-6 mt-5 mt-lg-0">
                 <div className="faq-content">
-                  <NetBandAccordion
+                  {/* <NetBandAccordion
                     items={faqItem}
                     eventKey={"home2"}
                     activeKey={"home22"}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

@@ -347,11 +347,11 @@ const page = () => {
               <div className="col-lg-6 mt-5 mt-lg-0">
                 <div className="faq-content style-2 style-color">
                   <div className="faq-accordion">
-                    <NetBandAccordion
+                    {/* <NetBandAccordion
                       items={faqItem}
                       eventKey="service"
                       activeKey={"service2"}
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
