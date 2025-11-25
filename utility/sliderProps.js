@@ -26,6 +26,7 @@ export const sliderProps = {
     slidesPerView: 1,
     effect: "fade",
     autoplay: false,
+    autoHeight: true,
     navigation: {
       nextEl: ".array-prev",
       prevEl: ".array-next",

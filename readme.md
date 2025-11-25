@@ -26,3 +26,7 @@ Pending
 6. planes, cual es el recomendado?
 7. planes, iconos
 8. planes, guardar plan si llena formulario
+9. redirect from gamer on vercel
+10. font issue
+11. delete unuse code
+12. fix google reports

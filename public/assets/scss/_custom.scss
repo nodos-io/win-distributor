@@ -32,18 +32,57 @@
 
 // Hero Slider
 .hero-1 {
+  .hero-form-overlay{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+
+    .container{
+      height: 100%;
+    }
+
+    .row{
+      height: 100%;
+    }
+
+    .hero-content{
+      pointer-events: auto;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
+    }
+  }
+
   @include breakpoint(max-lg){
+    .hero-form-overlay{
+      position: static;
+      inset: auto;
+      z-index: auto;
+      display: block;
+      pointer-events: auto;
+      margin-top: 16px;
+
+      .row{
+        height: auto;
+      }
+    }
     .swiper-mobile-slide {
       display: flex;
       flex-direction: column;
     }
     .hero-image {
+      position: relative;
       &::before {
-        opacity: 0.15;
+        opacity: 0.1;
       }
-      position: relative !important;
-      background-size: cover;
-      min-height: 220px;
+      img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
     .container{
       .hero-content{
