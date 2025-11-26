@@ -113,6 +113,7 @@ section.feature-icon-box-area{
     padding-right: 0;
   }
   .feature-icon-box-wrapper{
+    background-color: #f5f5f8;
     margin-top: 0;
     .icon-box-items::before{
       display: none;
@@ -160,6 +161,15 @@ section.feature-icon-box-area{
 
 // Pricing Card
 .pricing-section{
+  background-color: var(--white);
+  .section-title h2{
+    color: var(--theme);
+  }
+  .section-title span{
+    margin-top: 15px;
+    color: var(--black);
+    text-decoration: none;
+  }
   .pricing-header{
     s{
       font-size: 16px;
@@ -264,5 +274,91 @@ section.feature-icon-box-area{
         margin-bottom: 20px;
       }
     }
+  }
+}
+
+// Plan Slider
+.plan-slider-module{
+  .plan-tabs{
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .plan-tab{
+    border: none;
+    border-radius: 12px;
+    padding: 14px 18px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    max-width: 280px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    background: #e7e7e7;
+    color: #7c7c7c;
+    transition: all 0.2s ease;
+
+    &.active{
+      background: var(--theme);
+      color: #fff;
+    }
+
+    &:hover{
+      transform: translateY(-2px);
+    }
+  }
+
+  .pricing-card-items{
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--theme);
+  }
+
+  .movie-slider{
+    .swiper-wrapper{
+      align-items: stretch;
+    }
+    .swiper-slide{
+      display: flex;
+      justify-content: center;
+      @include breakpoint(max-md){
+        width: 100% !important;
+      }
+    }
+  }
+
+  .plan-grid{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .plan-grid-item{
+    flex: 0 1 360px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@include breakpoint(max-md){
+  .plan-slider-module{
+    .plan-tab{
+      flex: 1 1 100%;
+      max-width: none;
+      text-align: center;
+    }
+  }
+}
+
+.white-popup-block{
+  margin: 0 auto !important;
+}
+
+@media (max-width: 991px) {
+  .hero-1 .hero-form-overlay {
+      margin-top: 0px !important;
   }
 }

@@ -17,18 +17,6 @@ const page = () => {
     <NetBandLayout header={1}>
       {/*<< Hero Section Start >>*/}
       <Home1 />
-      {/*<< Pricing Section Start >>*/}
-      <section className="pricing-section fix section-padding">
-        <div className="container custom-container-2">
-          <div className="section-title text-center">
-            <span className="">Evalua tu cobertura</span>
-            <h2 className="text-white " >
-              ¡Sin costo de Instalación!
-            </h2>
-          </div>
-          <PlanSlider/>
-        </div>
-      </section>
       {/*<< Feature Icon Box Section Start >>*/}
       <section className="feature-icon-box-area">
         <div className="container">
@@ -79,13 +67,25 @@ const page = () => {
           </div>
         </div>
       </section>
+      {/*<< Pricing Section Start >>*/}
+      <section className="pricing-section fix section-padding">
+        <div className="container custom-container-2">
+          <div className="section-title text-center">
+            <h2 className="">
+              ¡Con WIN arma tu Plan como tú quieras!
+            </h2>
+            <span className="">¡S/0 costo de instalación en todos nuestros planes!</span>
+          </div>
+          <PlanSlider/>
+        </div>
+      </section>
       {/*<< Faq Section Start >>*/}
       <section className="faq-section section-padding">
         <div className="container">
           <div className="about-wrapper">
             <div className="container custom-container-2">
               <div className="section-title text-center">
-                <span className="">Evalua tu cobertura</span>
+                <span className="">Preguntas Frecuentes</span>
               </div>
             </div>
             <FaqAccordion items={FAQ_ITEMS} />

@@ -54,6 +54,7 @@ export const sliderProps = {
     spaceBetween: 20,
     speed: 2000,
     loop: false,
+    centeredSlides: true,
     pagination: {
       el: ".dot",
       clickable: true,

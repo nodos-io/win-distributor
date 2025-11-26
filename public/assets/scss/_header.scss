@@ -606,6 +606,13 @@
 }
 
 .header-1 {
+	&.sticky{
+		.header-left{
+			@include breakpoint (max-lg){
+				padding: 10px 0;
+			}
+		}
+	}
 	.container-fluid {
 		padding: 0 50px;
 
@@ -634,7 +641,7 @@
 
 				@include breakpoint (max-xl){
 					gap: 60px;
-				}
+				}				
 			}
 
 			.header-right {
