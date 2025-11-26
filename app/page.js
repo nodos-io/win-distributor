@@ -10,6 +10,7 @@ import NetBandLayout from "@/layouts/NetBandLayout";
 import Link from "next/link";
 import Counter from "@/components/Counter";
 import { FAQ_ITEMS } from "@/lib/constants";
+import FaqAccordion from "@/components/FaqAccordion";
 
 const page = () => {
   return (
@@ -20,8 +21,8 @@ const page = () => {
       <section className="pricing-section fix section-padding">
         <div className="container custom-container-2">
           <div className="section-title text-center">
-            <span className="wow fadeInUp">Evalua tu cobertura</span>
-            <h2 className="text-white wow fadeInUp" data-wow-delay=".3s">
+            <span className="">Evalua tu cobertura</span>
+            <h2 className="text-white " >
               ¡Sin costo de Instalación!
             </h2>
           </div>
@@ -34,8 +35,7 @@ const page = () => {
           <div className="feature-icon-box-wrapper">
             <div className="row g-4 align-items-stretch">
               <div
-                className="col-xl-4 col-lg-4 col-md-12 wow fadeInUp"
-                data-wow-delay=".3s"
+                className="col-xl-4 col-lg-4 col-md-12 "
               >
                 <div className="icon-box-items feature-vertical">
                   <div className="icon">
@@ -48,7 +48,7 @@ const page = () => {
                 </div>
               </div>
               <div
-                className="col-xl-4 col-lg-4 col-md-12 wow fadeInUp"
+                className="col-xl-4 col-lg-4 col-md-12 "
                 data-wow-delay=".5s"
               >
                 <div className="icon-box-items feature-vertical">
@@ -62,7 +62,7 @@ const page = () => {
                 </div>
               </div>
               <div
-                className="col-xl-4 col-lg-4 col-md-12 wow fadeInUp"
+                className="col-xl-4 col-lg-4 col-md-12 "
                 data-wow-delay=".7s"
               >
                 <div className="icon-box-items feature-vertical">
@@ -85,25 +85,10 @@ const page = () => {
           <div className="about-wrapper">
             <div className="container custom-container-2">
               <div className="section-title text-center">
-                <span className="wow fadeInUp">Evalua tu cobertura</span>
+                <span className="">Evalua tu cobertura</span>
               </div>
             </div>
-            <div className="row">
-              <div className="col-lg-6 mt-lg-0">
-                <div className="faq-content style-2 style-color">
-                  <div className="faq-accordion">
-                    <NetBandAccordion items={FAQ_ITEMS} column="left" />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 mt-lg-0">
-                <div className="faq-content style-2 style-color">
-                  <div className="faq-accordion">
-                    <NetBandAccordion items={FAQ_ITEMS} column="right" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <FaqAccordion items={FAQ_ITEMS} />
           </div>
         </div>
       </section>

@@ -114,23 +114,21 @@ section.feature-icon-box-area{
   }
   .feature-icon-box-wrapper{
     margin-top: 0;
+    .icon-box-items::before{
+      display: none;
+    }
     .icon-box-items.feature-vertical{
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 16px;
-      padding: 24px 30px;
-      height: 100%;
-      border-right: 1px solid #d9d9d9;
+        padding: 24px 30px;
+        height: 100%;
 
-      &:last-child{
-        border-right: none;
-      }
-
-      .icon{
-        background: none;
-        width: auto;
-        height: auto;
+        .icon{
+          background: none;
+          width: auto;
+          height: auto;
         line-height: 1;
         font-size: 64px;
         color: $theme-color;
@@ -154,13 +152,7 @@ section.feature-icon-box-area{
   section.feature-icon-box-area{
     .feature-icon-box-wrapper{
       .icon-box-items.feature-vertical{
-        border-right: none;
-        border-bottom: 1px solid #d9d9d9;
         padding: 24px 12px 28px;
-
-        &:last-child{
-          border-bottom: none;
-        }
       }
     }
   }
