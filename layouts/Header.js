@@ -52,15 +52,6 @@ export default Header;
 const Header1 = ({ openSidebar, single, menus }) => {
   return (
     <Fragment>
-      <div className="header-top-section fix">
-        <div className="container">
-          <div className="header-top-wrapper">
-            <ul className="contact-list">
-              <li>EL INTERNET HOGAR #1 EN SATISFACCION AL CLIENTE</li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <header className="header-section-1">
         <div id="header-sticky" className="header-1">
           <div className="container-fluid">

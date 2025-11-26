@@ -114,6 +114,55 @@ section.feature-icon-box-area{
   }
   .feature-icon-box-wrapper{
     margin-top: 0;
+    .icon-box-items.feature-vertical{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      padding: 24px 30px;
+      height: 100%;
+      border-right: 1px solid #d9d9d9;
+
+      &:last-child{
+        border-right: none;
+      }
+
+      .icon{
+        background: none;
+        width: auto;
+        height: auto;
+        line-height: 1;
+        font-size: 64px;
+        color: $theme-color;
+      }
+
+      .content{
+        flex-basis: auto;
+        h3{
+          color: $theme-color;
+          margin-bottom: 8px;
+        }
+        p{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(max-lg){
+  section.feature-icon-box-area{
+    .feature-icon-box-wrapper{
+      .icon-box-items.feature-vertical{
+        border-right: none;
+        border-bottom: 1px solid #d9d9d9;
+        padding: 24px 12px 28px;
+
+        &:last-child{
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
 
