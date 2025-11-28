@@ -382,7 +382,28 @@ section.feature-icon-box-area{
   .pricing-card-items{
     height: 100%;
     width: 100%;
+    background: #fff;
     border: 1px solid var(--theme);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    border-radius: 16px;
+    padding: 28px 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    &::before{
+      display: none;
+    }
+
+    .theme-btn{
+      width: 100%;
+      justify-content: center;
+      margin-top: auto;
+    }
   }
 
   .movie-slider{
@@ -410,6 +431,123 @@ section.feature-icon-box-area{
     display: flex;
     justify-content: center;
   }
+
+  .plan-card__top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #fff7ef;
+    border: 1px solid #f2c9ad;
+    border-radius: 18px;
+    padding: 16px 12px;
+  }
+
+  .plan-card__title{
+    margin: 0;
+    font-weight: 800;
+    color: var(--theme);
+    font-size: 18px;
+  }
+
+  .plan-card__speed{
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #000;
+  }
+
+  .plan-card__plus{
+    color: var(--theme);
+    font-weight: 900;
+    font-size: 22px;
+  }
+
+  .plan-card__plus-row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .plan-card__brand{
+    min-height: 32px;
+    min-width: 140px;
+    padding: 6px 12px;
+    border: 1px dashed #f2c9ad;
+    background: #ffffff;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #f05a28;
+    gap: 6px;
+  }
+
+  .plan-card__brand-img{
+    max-height: 25px;
+    width: auto;
+  }
+
+  .plan-card__price-row{
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2px;
+  }
+
+  .plan-card__price{
+    color: var(--theme);
+    font-size: 28px;
+    font-weight: 900;
+    margin: 0;
+  }
+
+  .plan-card__price-note{
+    color: #f05a28;
+    font-weight: 700;
+  }
+
+  .plan-card__original{
+    font-size: 14px;
+    color: #555;
+    margin-top: -20px;
+  }
+
+  .plan-card__addons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .plan-card__addon{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: #1f1f1f;
+  }
+
+  .plan-card__addon-top{
+    display: block;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.2;
+  }
+
+  .plan-card__addon-image{
+    max-height: 60px;
+    width: auto;
+  }
+
+  .plan-card__addon-bottom{
+    display: block;
+    font-weight: 800;
+    color: #000;
+    line-height: 1.2;
+  }
 }
 
 @include breakpoint(max-md){
@@ -418,6 +556,18 @@ section.feature-icon-box-area{
       flex: 1 1 100%;
       max-width: none;
       text-align: center;
+    }
+    .pricing-card-items{
+      padding: 24px 18px 26px;
+    }
+    .plan-card__brand{
+      min-width: 120px;
+    }
+    .plan-card__top{
+      padding: 14px 12px;
+    }
+    .plan-card__addon-image{
+      max-height: 50px;
     }
   }
 }
