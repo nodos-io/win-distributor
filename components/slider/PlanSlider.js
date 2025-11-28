@@ -156,7 +156,7 @@ export const DGO_SERVICES = [
     label: "DGO BASICO",
     plans: [
       {
-        id: "dgo-plan-1",
+        id: "dgo-basico-1",
         title: "100% Fibra Óptica Internet",
         speed: "850 MBPS",
         price: "S/ 94,00",
@@ -167,7 +167,7 @@ export const DGO_SERVICES = [
         addons: [],
       },
       {
-        id: "dgo-plan-1",
+        id: "dgo-basico-2",
         title: "100% Fibra Óptica Internet",
         speed: "1000 MBPS",
         price: "S/ 104,00",
@@ -191,7 +191,7 @@ export const DGO_SERVICES = [
     label: "DGO FULL",
     plans: [
       {
-        id: "dgo-plan-1",
+        id: "dgo-full-1",
         title: "100% Fibra Óptica Internet",
         speed: "850 MBPS",
         price: "S/ 97,50",
@@ -202,7 +202,7 @@ export const DGO_SERVICES = [
         addons: [],
       },
       {
-        id: "dgo-plan-1",
+        id: "dgo-full-2",
         title: "100% Fibra Óptica Internet",
         speed: "1000 MBPS",
         price: "S/ 107,50",
