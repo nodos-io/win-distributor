@@ -25,7 +25,7 @@ export const WINTV_SERVICES = [
       {
         id: "fibra-600",
         title: "100% Fibra Óptica Internet",
-        speed: "1000 Mbps",
+        speed: "1000 MBPS",
         price: "S/ 69,95",
         priceNote: "x 1 mes",
         originalPrice: "S/139,90",
@@ -49,7 +49,7 @@ export const WINTV_SERVICES = [
       {
         id: "premium-800",
         title: "100% Fibra Óptica Internet",
-        speed: "850 Mbps",
+        speed: "850 MBPS",
         price: "S/ 64,45",
         priceNote: "x 1 mes",
         originalPrice: "S/128,90",
@@ -60,7 +60,7 @@ export const WINTV_SERVICES = [
       {
         id: "premium-500",
         title: "100% Fibra Óptica Internet",
-        speed: "1000 Mbps",
+        speed: "1000 MBPS",
         price: "S/ 74,45",
         priceNote: "x 1 mes",
         originalPrice: "S/148,90",
@@ -84,7 +84,7 @@ export const WINTV_SERVICES = [
       {
         id: "l1-700",
         title: "100% Fibra Óptica Internet",
-        speed: "850 Mbps",
+        speed: "850 MBPS",
         price: "S/ 72,45",
         priceNote: "x 1 mes",
         originalPrice: "S/144,90",
@@ -95,7 +95,7 @@ export const WINTV_SERVICES = [
       {
         id: "l1-400",
         title: "100% Fibra Óptica Internet",
-        speed: "1000 Mbps",
+        speed: "1000 MBPS",
         price: "S/ 82,45",
         priceNote: "x 1 mes",
         originalPrice: "S/164,90",
@@ -119,7 +119,7 @@ export const WINTV_SERVICES = [
       {
         id: "premium-max-900",
         title: "100% Fibra Óptica Internet",
-        speed: "850 Mbps",
+        speed: "850 MBPS",
         price: "S/ 77,45",
         priceNote: "x 1 mes",
         originalPrice: "S/154,90",
@@ -130,7 +130,7 @@ export const WINTV_SERVICES = [
       {
         id: "premium-max-500",
         title: "100% Fibra Óptica Internet",
-        speed: "1000 Mbps",
+        speed: "1000 MBPS",
         price: "S/ 87,45",
         priceNote: "x 1 mes",
         originalPrice: "S/174,90",
