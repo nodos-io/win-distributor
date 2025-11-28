@@ -2,8 +2,59 @@
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
 @font-face {
-    font-family: MadeTommySoft;
-    src: url("/public/assets/fonts/made_tommy_soft/MADETommySoft\ Black.otf") format("opentype");
+    font-family: "MadeTommySoft";
+    src: url("/assets/fonts/made_tommy_soft/MADETommySoftThin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MadeTommySoft";
+    src: url("/assets/fonts/made_tommy_soft/MADETommySoftLight.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MadeTommySoft";
+    src: url("/assets/fonts/made_tommy_soft/MADETommySoftRegular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MadeTommySoft";
+    src: url("/assets/fonts/made_tommy_soft/MADETommySoftMedium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MadeTommySoft";
+    src: url("/assets/fonts/made_tommy_soft/MADETommySoftBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MadeTommySoft";
+    src: url("/assets/fonts/made_tommy_soft/MADETommySoftExtraBold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MadeTommySoft";
+    src: url("/assets/fonts/made_tommy_soft/MADETommySoftBlack.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 $heading-font: "MadeTommySoft", sans-serif;
@@ -125,6 +176,4 @@ p {
     margin: 0px;
 	@include transition;
 }
-
-
 
