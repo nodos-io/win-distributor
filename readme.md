@@ -9,6 +9,13 @@ Websites
 1. https://wininternetperu.com/
 2. https://winplangamer.com/
 
+Content
+
+Slideshow
+
+- Desktop: 1500x850
+- Mobile: 500x700
+
 Deploying to Firebase
 
 1. npm run build

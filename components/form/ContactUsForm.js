@@ -134,9 +134,10 @@ const ContactUsForm = () => {
   return (
     <div className="contact-us-container contact-form-items white-popup-block p-4 bg-white rounded shadow">
       <div className="contact-title">
-        <h3 className="wow fadeInUp center" data-wow-delay=".3s">
+        <h3 className="center" style={{color: "var(--theme)", marginBottom: "15px"}}>CAMBIATE A WIN</h3>
+        <h4 className="wow fadeInUp center" data-wow-delay=".3s" style={{marginBottom: "15px"}}>
           {!success ? "¡Déjanos tus datos y te llamamos!" : "Gracias por contactarnos"}
-        </h3>
+        </h4>
         <p>&nbsp;</p>
       </div>
       {success ? (

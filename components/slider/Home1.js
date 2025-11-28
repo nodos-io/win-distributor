@@ -8,20 +8,20 @@ const Home1 = () => {
   const slides = [
     {
       id: 1,
-      desktopSrc: "assets/img/hero/hero_1.png",
-      mobileSrc: "assets/img/hero/hero_mobile_1.jpg",
+      desktopSrc: "assets/img/hero/hero_desktop_1.png",
+      mobileSrc: "assets/img/hero/hero_mobile_1.png",
       alt: "Internet por fibra óptica WIN",
     },
     {
       id: 2,
-      desktopSrc: "assets/img/hero/hero_2.png",
-      mobileSrc: "assets/img/hero/hero_mobile_2.jpg",
+      desktopSrc: "assets/img/hero/hero_desktop_2.png",
+      mobileSrc: "assets/img/hero/hero_mobile_2.png",
       alt: "Planes Gamer y Hogar WIN",
     },
     {
       id: 3,
-      desktopSrc: "assets/img/hero/hero_3.png",
-      mobileSrc: "assets/img/hero/hero_mobile_1.jpg",
+      desktopSrc: "assets/img/hero/hero_desktop_3.png",
+      mobileSrc: "assets/img/hero/hero_mobile_3.png",
       alt: "Cobertura WIN en tu zona",
     },
   ];

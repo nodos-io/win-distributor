@@ -8,6 +8,7 @@ import PlanSlider from "@/components/slider/PlanSlider";
 import TestimonialSlider from "@/components/slider/TestimonialSlider";
 import NetBandLayout from "@/layouts/NetBandLayout";
 import Link from "next/link";
+import Image from "next/image";
 import Counter from "@/components/Counter";
 import { FAQ_ITEMS } from "@/lib/constants";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -17,6 +18,36 @@ const page = () => {
     <NetBandLayout header={1}>
       {/*<< Hero Section Start >>*/}
       <Home1 />
+      {/* Discount callout */}
+      <section className="discount-callout">
+        <div className="container custom-container-2">
+          <p className="discount-message">
+            ¡50% DE DESCUENTO EN<br style={{display: "block"}}/>
+            <span className="discount-message__accent">NUESTROS PLANES SELECCIONADOS</span><br style={{display: "block"}}/>
+            DE INTERNET 100% FIBRA ÓPTICA!
+          </p>
+        </div>
+      </section>
+      {/*<< Pricing Section Start >>*/}
+      <section className="pricing-section fix section-padding">
+        <div className="container custom-container-2">
+          <div className="section-title text-center">
+            <div className="plan-headline">
+              <h2 style={{color:"black"}}>100% FIBRA</h2>
+              <span style={{color: "var(--theme)", fontSize: "50px"}}>+</span>
+              <Image
+                src="/assets/img/plan/wintv_logo.png"
+                alt="WinTV Logo"
+                width={200}
+                height={80}
+                className="plan-headline__logo"
+                priority
+              />
+            </div>
+          </div>
+          <PlanSlider/>
+        </div>
+      </section>
       {/*<< Feature Icon Box Section Start >>*/}
       <section className="feature-icon-box-area">
         <div className="container">
@@ -66,19 +97,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </section>
-      {/*<< Pricing Section Start >>*/}
-      <section className="pricing-section fix section-padding">
-        <div className="container custom-container-2">
-          <div className="section-title text-center">
-            <h2 className="">
-              ¡Con WIN arma tu Plan como tú quieras!
-            </h2>
-            <span className="">¡S/0 costo de instalación en todos nuestros planes!</span>
-          </div>
-          <PlanSlider/>
-        </div>
-      </section>
+      </section>      
       {/*<< Faq Section Start >>*/}
       <section className="faq-section section-padding">
         <div className="container">
