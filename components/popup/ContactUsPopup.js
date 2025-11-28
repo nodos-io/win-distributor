@@ -39,17 +39,16 @@ const ContactUsPopup = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const timerId = setTimeout(() => {
-      const popups = document.querySelectorAll(".contact-us-popup-modal");
-      popups.forEach((popup) => {
-        popup.addEventListener("click", (e) => {
-          e.preventDefault();
-          setOpen(true);
-        });
-      });
-    }, 500);
+    const handleClick = (e) => {
+      const trigger = e.target.closest(".contact-us-popup-modal");
+      if (trigger) {
+        e.preventDefault();
+        setOpen(true);
+      }
+    };
+    document.addEventListener("click", handleClick);
     return () => {
-      clearTimeout(timerId);
+      document.removeEventListener("click", handleClick);
     };
   }, []);
 
