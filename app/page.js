@@ -28,7 +28,7 @@ const page = () => {
           </p>
         </div>
       </section>
-      {/*<< Pricing Section Start >>*/}
+      {/*<< Pricing Section Start - WINTV >>*/}
       <section className="pricing-section fix section-padding">
         <div className="container custom-container-2">
           <div className="section-title text-center">
@@ -45,7 +45,27 @@ const page = () => {
               />
             </div>
           </div>
-          <PlanSlider/>
+          <PlanSlider service='wintv'/>
+        </div>
+      </section>
+      {/*<< Pricing Section Start - DGO >>*/}
+      <section className="pricing-section fix section-padding">
+        <div className="container custom-container-2">
+          <div className="section-title text-center">
+            <div className="plan-headline">
+              <h2 style={{color:"black"}}>100% FIBRA</h2>
+              <span style={{color: "var(--theme)", fontSize: "50px"}}>+</span>
+              <Image
+                src="/assets/img/plan/dgo_logo.png"
+                alt="DGO Logo"
+                width={200}
+                height={80}
+                className="plan-headline__logo"
+                priority
+              />
+            </div>
+          </div>
+          <PlanSlider service='dgo'/>
         </div>
       </section>
       {/*<< Feature Icon Box Section Start >>*/}

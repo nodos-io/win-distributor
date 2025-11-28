@@ -550,6 +550,13 @@ section.feature-icon-box-area{
   }
 }
 
+.plan-divider{
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.15), transparent);
+  margin: 32px auto 8px;
+}
+
 @include breakpoint(max-md){
   .plan-slider-module{
     .plan-tab{
