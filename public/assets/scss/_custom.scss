@@ -32,18 +32,57 @@
 
 // Hero Slider
 .hero-1 {
+  .hero-form-overlay{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+
+    .container{
+      height: 100%;
+    }
+
+    .row{
+      height: 100%;
+    }
+
+    .hero-content{
+      pointer-events: auto;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
+    }
+  }
+
   @include breakpoint(max-lg){
+    .hero-form-overlay{
+      position: static;
+      inset: auto;
+      z-index: auto;
+      display: block;
+      pointer-events: auto;
+      margin-top: 16px;
+
+      .row{
+        height: auto;
+      }
+    }
     .swiper-mobile-slide {
       display: flex;
       flex-direction: column;
     }
     .hero-image {
+      position: relative;
       &::before {
-        opacity: 0.15;
+        opacity: 0.1;
       }
-      position: relative !important;
-      background-size: cover;
-      min-height: 220px;
+      img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
     .container{
       .hero-content{
@@ -75,11 +114,112 @@ section.feature-icon-box-area{
   }
   .feature-icon-box-wrapper{
     margin-top: 0;
+    .icon-box-items::before{
+      display: none;
+    }
+    .icon-box-items.feature-vertical{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+        padding: 24px 30px;
+        height: 100%;
+
+        .icon{
+          background: none;
+          width: auto;
+          height: auto;
+        line-height: 1;
+        font-size: 64px;
+        color: $theme-color;
+      }
+
+      .content{
+        flex-basis: auto;
+        h3{
+          color: $theme-color;
+          margin-bottom: 8px;
+        }
+        p{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(max-lg){
+  section.feature-icon-box-area{
+    .feature-icon-box-wrapper{
+      .icon-box-items.feature-vertical{
+        padding: 24px 12px 28px;
+      }
+    }
+  }
+}
+
+// Discount Callout
+.discount-callout{
+  background: #fff7ef;
+  padding: 22px 0;
+
+  .discount-message{
+    margin: 0;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    font-size: clamp(18px, 2vw + 12px, 28px);
+    letter-spacing: 0.3px;
+    line-height: 1.35;
+
+    .discount-message__accent{
+      color: var(--theme);
+    }
   }
 }
 
 // Pricing Card
 .pricing-section{
+  background-color: var(--white);
+  .plan-headline{
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+
+    h2{
+      margin: 0;
+      color: #000;
+      line-height: 0.7;
+      display: block;
+    }
+
+    span{
+      color: var(--theme);
+      font-size: 50px;
+    }
+
+    .plan-headline__logo{
+      max-height: 50px;
+      width: auto;
+      height: auto;
+      display: block;
+    }
+  }
+  &.section-padding{
+    padding: 40px 0;
+  }
+  .section-title h2{
+    color: var(--theme);
+  }
+  .section-title span{
+    margin-top: 15px;
+    color: var(--black);
+    text-decoration: none;
+  }
   .pricing-header{
     s{
       font-size: 16px;
@@ -89,6 +229,25 @@ section.feature-icon-box-area{
     s{
       font-size: 14px;
       color: black;
+    }
+  }
+}
+
+@include breakpoint(max-md){
+  .pricing-section{
+    .plan-headline{
+      gap: 12px;
+      margin-bottom: 25px;
+          
+      span{
+        color: var(--theme);
+        font-size: 30px;
+        margin:0;
+      }
+
+      .plan-headline__logo{
+        max-height: 30px;
+      }
     }
   }
 }
@@ -184,5 +343,248 @@ section.feature-icon-box-area{
         margin-bottom: 20px;
       }
     }
+  }
+}
+
+// Plan Slider
+.plan-slider-module{
+  .plan-tabs{
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .plan-tab{
+    border: none;
+    border-radius: 12px;
+    padding: 14px 18px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    max-width: 280px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    background: #e7e7e7;
+    color: #7c7c7c;
+    transition: all 0.2s ease;
+
+    &.active{
+      background: var(--theme);
+      color: #fff;
+    }
+
+    &:hover{
+      transform: translateY(-2px);
+    }
+  }
+
+  .pricing-card-items{
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--theme);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    border-radius: 16px;
+    padding: 28px 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    &::before{
+      display: none;
+    }
+
+    .theme-btn{
+      width: 100%;
+      justify-content: center;
+      margin-top: auto;
+    }
+  }
+
+  .movie-slider{
+    .swiper-wrapper{
+      align-items: stretch;
+    }
+    .swiper-slide{
+      display: flex;
+      justify-content: center;
+      @include breakpoint(max-md){
+        width: 100% !important;
+      }
+    }
+  }
+
+  .plan-grid{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .plan-grid-item{
+    flex: 0 1 360px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .plan-card__top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #fff7ef;
+    border: 1px solid #f2c9ad;
+    border-radius: 18px;
+    padding: 16px 12px;
+  }
+
+  .plan-card__title{
+    margin: 0;
+    font-weight: 800;
+    color: var(--theme);
+    font-size: 18px;
+  }
+
+  .plan-card__speed{
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #000;
+  }
+
+  .plan-card__plus{
+    color: var(--theme);
+    font-weight: 900;
+    font-size: 22px;
+  }
+
+  .plan-card__plus-row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .plan-card__brand{
+    min-height: 32px;
+    min-width: 140px;
+    padding: 6px 12px;
+    border: 1px dashed #f2c9ad;
+    background: #ffffff;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #f05a28;
+    gap: 6px;
+  }
+
+  .plan-card__brand-img{
+    max-height: 25px;
+    width: auto;
+  }
+
+  .plan-card__price-row{
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2px;
+  }
+
+  .plan-card__price{
+    color: var(--theme);
+    font-size: 28px;
+    font-weight: 900;
+    margin: 0;
+  }
+
+  .plan-card__price-note{
+    color: #f05a28;
+    font-weight: 700;
+  }
+
+  .plan-card__original{
+    font-size: 14px;
+    color: #555;
+    margin-top: -20px;
+  }
+
+  .plan-card__addons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .plan-card__addon{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: #1f1f1f;
+  }
+
+  .plan-card__addon-top{
+    display: block;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.2;
+  }
+
+  .plan-card__addon-image{
+    max-height: 60px;
+    width: auto;
+  }
+
+  .plan-card__addon-bottom{
+    display: block;
+    font-weight: 800;
+    color: #000;
+    line-height: 1.2;
+  }
+}
+
+.plan-divider{
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.15), transparent);
+  margin: 32px auto 8px;
+}
+
+@include breakpoint(max-md){
+  .plan-slider-module{
+    .plan-tab{
+      flex: 1 1 100%;
+      max-width: none;
+      text-align: center;
+    }
+    .pricing-card-items{
+      padding: 24px 18px 26px;
+    }
+    .plan-card__brand{
+      min-width: 120px;
+    }
+    .plan-card__top{
+      padding: 14px 12px;
+    }
+    .plan-card__addon-image{
+      max-height: 50px;
+    }
+  }
+}
+
+.white-popup-block{
+  margin: 0 auto !important;
+}
+
+@media (max-width: 991px) {
+  .hero-1 .hero-form-overlay {
+      margin-top: 0px !important;
   }
 }

@@ -6,13 +6,7 @@ const Menus = ({ single, menus }) => {
     <nav id="mobile-menu" className="d-none d-lg-block">
       <ul>
         <li className="active menu-thumb">
-          <Link href="/">Mono</Link>
-        </li>
-        <li className="d-lg-none">
-          <Link href="/" className="border-none">Mono</Link>
-        </li>
-        <li>
-          <Link href="duos">Dúos</Link>
+          <Link href="/">Hogar</Link>
         </li>
         <li>
           <Link href="gamer">Gamer</Link>
@@ -28,10 +22,7 @@ export const MobileMenu = ({ menus, single }) => {
     <nav className="mean-nav d-block d-lg-none">
       <ul>
         <li className="active d-lg-none">
-          <Link href="/">Mono</Link>
-        </li>
-        <li>
-          <Link href="duos">Dúos</Link>
+          <Link href="/">Hogar</Link>
         </li>
         <li className="mean-last">
           <Link href="gamer">Gamer</Link>

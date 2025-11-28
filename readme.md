@@ -9,6 +9,13 @@ Websites
 1. https://wininternetperu.com/
 2. https://winplangamer.com/
 
+Content
+
+Slideshow
+
+- Desktop: 1500x850
+- Mobile: 500x700
+
 Deploying to Firebase
 
 1. npm run build
@@ -26,3 +33,7 @@ Pending
 6. planes, cual es el recomendado?
 7. planes, iconos
 8. planes, guardar plan si llena formulario
+9. redirect from gamer on vercel
+10. font issue
+11. delete unuse code
+12. fix google reports

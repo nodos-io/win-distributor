@@ -69,6 +69,13 @@ const Footer1 = () => {
               </li>
             </ul>
           </div>
+          <div className="footer-meta d-flex flex-wrap gap-3 mt-3">
+            <p className="footer-meta__item small mb-0">
+              “WIN” y su logotipo son marcas de WI-NET TELECOM S.A.C. (RUC 20521233991).<br style={{display: "block"}}/>
+              Comercializamos Internet Hogar. No ofrecemos juegos ni apuestas.<br style={{display: "block"}}/>
+              WI-NET TELECOM S.A.C. — Av. República de Panamá 3418–3420, Torre Barlovento, San Isidro, Lima · Central: ‪(+51) 01 707 3000‬ · 0800 741 00 · contacto@win.pe
+            </p>
+          </div>
         </div>
         <a href="#" id="scrollUp" className="scroll-icon">
           <i className="far fa-arrow-up" />

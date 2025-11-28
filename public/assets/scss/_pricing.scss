@@ -205,6 +205,9 @@
 
 .pricing-section {
     background-color: $header-color;
+    &.section-padding{
+        padding: 40px 0 !important;
+    }
 }
 
 .pricing-card-items {

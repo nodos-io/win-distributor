@@ -5,6 +5,26 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import ContactUsForm from "../form/ContactUsForm";
 
 const Home1 = () => {
+  const slides = [
+    {
+      id: 1,
+      desktopSrc: "assets/img/hero/hero_desktop_1.png",
+      mobileSrc: "assets/img/hero/hero_mobile_1.png",
+      alt: "Internet por fibra óptica WIN",
+    },
+    {
+      id: 2,
+      desktopSrc: "assets/img/hero/hero_desktop_2.png",
+      mobileSrc: "assets/img/hero/hero_mobile_2.png",
+      alt: "Planes Gamer y Hogar WIN",
+    },
+    {
+      id: 3,
+      desktopSrc: "assets/img/hero/hero_desktop_3.png",
+      mobileSrc: "assets/img/hero/hero_mobile_3.png",
+      alt: "Cobertura WIN en tu zona",
+    },
+  ];
   const swiperRef = useRef(null);
   return (
     <section className="hero-section hero-1">
@@ -21,52 +41,28 @@ const Home1 = () => {
         {...sliderProps.home1}
         className="swiper hero-slider"
       >
-        <SwiperSlide className="swiper-slide swiper-mobile-slide">
-          <div
-            className="hero-image bg-cover"
-            style={{ backgroundImage: 'url("assets/img/hero/hero_1.png")' }}
-          />
-          <div className="container">
-            <div className="row justify-content-between align-items-center">
-              <div className="col-xl-4">
-                <div className="hero-content">
-                  <ContactUsForm/>
-                </div>
-              </div>
+        {slides.map((slide) => (
+          <SwiperSlide className="swiper-slide swiper-mobile-slide" key={slide.id}>
+            <div className="hero-image">
+              <picture>
+                <source media="(max-width: 991px)" srcSet={slide.mobileSrc || slide.desktopSrc} />
+                <img src={slide.desktopSrc} alt={slide.alt} loading="lazy" />
+              </picture>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div
-            className="hero-image bg-cover"
-            style={{ backgroundImage: 'url("assets/img/hero/hero_2.png")' }}
-          />
-          <div className="container">
-            <div className="row justify-content-between align-items-center">
-              <div className="col-xl-4">
-                <div className="hero-content">
-                  <ContactUsForm/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <div
-            className="hero-image bg-cover"
-            style={{ backgroundImage: 'url("assets/img/hero/hero_3.png")' }}
-          />
-          <div className="container">
-            <div className="row justify-content-between align-items-center">
-              <div className="col-xl-4">
-                <div className="hero-content">
-                  <ContactUsForm/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
+      <div className="hero-form-overlay">
+        <div className="container">
+          <div className="row justify-content-between align-items-center h-100">
+            <div className="col-xl-4">
+              <div className="hero-content">
+                <ContactUsForm />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

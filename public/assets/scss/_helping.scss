@@ -272,6 +272,7 @@ background: transparent;
       opacity: 1;
       border-radius: 60px;
       position: relative;
+      border: 1px solid var(--black);
   }
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
       background-color: $theme-color;
