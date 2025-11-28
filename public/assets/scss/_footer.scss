@@ -356,6 +356,20 @@
     
     }
 
+    .footer-meta{
+        margin-top: 10px;
+        p{
+            color: $white;
+            opacity: 0.9;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        @include breakpoint(max-md){
+            gap: 6px !important;
+        }
+    }
+
     .scroll-icon {
         position: absolute;
         left: 50%;
