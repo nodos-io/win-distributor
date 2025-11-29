@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Accordion } from "react-bootstrap";
+import { HOME_PAGE_CONTENT } from "@/lib/constants";
 
 const buildColumns = (items = []) => {
   const left = [];
@@ -16,7 +17,9 @@ const buildColumns = (items = []) => {
   return { left, right };
 };
 
-const FaqAccordion = ({ items = [] }) => {
+const DEFAULT_ITEMS = HOME_PAGE_CONTENT.FAQ.ITEMS;
+
+const FaqAccordion = ({ items = DEFAULT_ITEMS }) => {
   const { left, right } = useMemo(() => buildColumns(items), [items]);
   const [active, setActive] = useState({ left: null, right: null });
 

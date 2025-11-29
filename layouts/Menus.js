@@ -1,16 +1,25 @@
 "use client";
+"use client";
 import Link from "next/link";
+import { HOME_PAGE_CONTENT } from "@/lib/constants";
+
+const NAVIGATION = HOME_PAGE_CONTENT.NAVIGATION;
 
 const Menus = ({ single, menus }) => {
+  const items = menus?.length ? menus : NAVIGATION.PRIMARY;
+
   return (
     <nav id="mobile-menu" className="d-none d-lg-block">
       <ul>
-        <li className="active menu-thumb">
-          <Link href="/">Plan Hogar</Link>
-        </li>
-        <li>
-          <Link href="gamer">Plan Gamer</Link>
-        </li>
+        {items.map((item) => (
+          // Allow lowercase keys if menus are passed from elsewhere
+          <li
+            key={item.id}
+            className={`${item.ACTIVE ?? item.active ? "active" : ""} menu-thumb`.trim()}
+          >
+            <Link href={item.HREF || item.href || "/"}>{item.LABEL || item.label}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
@@ -18,15 +27,19 @@ const Menus = ({ single, menus }) => {
 export default Menus;
 
 export const MobileMenu = ({ menus, single }) => {
+  const items = menus?.length ? menus : NAVIGATION.MOBILE;
+
   return (
     <nav className="mean-nav d-block d-lg-none">
       <ul>
-        <li className="active d-lg-none">
-          <Link href="/">Plan Hogar</Link>
-        </li>
-        <li className="mean-last">
-          <Link href="gamer">Plan Gamer</Link>
-        </li>
+        {items.map((item, index) => (
+          <li
+            key={item.id}
+            className={`${item.ACTIVE ?? item.active ? "active" : ""} ${index === items.length - 1 ? "mean-last" : ""}`.trim()}
+          >
+            <Link href={item.HREF || item.href || "/"}>{item.LABEL || item.label}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

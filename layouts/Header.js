@@ -4,7 +4,9 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import Menus from "./Menus";
 import Offcanvas from "./Offcanvas";
-import {WHATSAPP_PHONE_LINK, WHATSAPP_PHONE_CLEAN} from "@/lib/constants";
+import {WHATSAPP_PHONE_LINK, WHATSAPP_PHONE_CLEAN, HOME_PAGE_CONTENT} from "@/lib/constants";
+
+const HEADER1_CONTENT = HOME_PAGE_CONTENT.HEADER1;
 
 const Header = ({ header, single, menus }) => {
   const [sidebarToggle, setSidebarToggle] = useState(false);
@@ -60,7 +62,7 @@ const Header1 = ({ openSidebar, single, menus }) => {
                 <div className="header-left">
                   <div className="logo">
                     <Link href="/" className="header-logo">
-                      <img src="assets/img/logo/logo.svg" alt="logo-img" />
+                      <img src={HEADER1_CONTENT.LOGO_SRC} alt={HEADER1_CONTENT.LOGO_ALT} />
                     </Link>
                   </div>
                   <div className="mean__menu-wrapper">
@@ -72,7 +74,7 @@ const Header1 = ({ openSidebar, single, menus }) => {
                 <div className="header-right d-flex justify-content-end align-items-center">
                   <div className="contact-info">
                     <div className="content">
-                      <p>Llámanos al:</p>
+                      <p>{HEADER1_CONTENT.CALL_LABEL}</p>
                       <h6>
                         <a
                           href={`${WHATSAPP_PHONE_LINK}`}
@@ -87,7 +89,7 @@ const Header1 = ({ openSidebar, single, menus }) => {
                   </div>
                   <div className="header-button">
                     <button className="link-btn contact-us-popup-modal">
-                      <span>Contáctenos</span>
+                      <span>{HEADER1_CONTENT.CTA_LABEL}</span>
                       <i className="fas fa-chevron-right" />
                     </button>
                   </div>
