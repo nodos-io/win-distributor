@@ -2,6 +2,9 @@
 import useClickOutside from "@/utility/useClickOutside";
 import { Fragment, useEffect, useState } from "react";
 import ContactUsForm from "@/components/form/ContactUsForm";
+import { HOME_PAGE_CONTENT } from "@/lib/constants";
+
+const CONTACT_POPUP = HOME_PAGE_CONTENT.CONTACT_POPUP;
 
 const ContactUsPopup_ = ({ close }) => {
   const domNode = useClickOutside(() => {
@@ -19,7 +22,7 @@ const ContactUsPopup_ = ({ close }) => {
         <div className="mfp-container popup-container mfp-s-ready">
           <div className="mfp-content" ref={domNode}>
             <button
-                title="Close (Esc)"
+                title={CONTACT_POPUP.CLOSE_LABEL}
                 type="button"
                 className="mfp-close"
                 onClick={() => close(false)}
@@ -28,7 +31,7 @@ const ContactUsPopup_ = ({ close }) => {
             </button>
             <ContactUsForm/>
           </div>
-          <div className="mfp-preloader">Cargando...</div>
+          <div className="mfp-preloader">{CONTACT_POPUP.LOADING_TEXT}</div>
         </div>
       </div>
     </Fragment>

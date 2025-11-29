@@ -4,231 +4,18 @@ import { sliderProps } from "@/utility/sliderProps";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { HOME_PAGE_CONTENT } from "@/lib/constants";
 
-// WINTV Services and Plans
-export const WINTV_SERVICES = [
-  {
-    id: "internet-tv-plus-fibra",
-    label: "WIN TV PLUS",
-    plans: [
-      {
-        id: "win-tv-plus-850",
-        title: "100% Fibra Óptica Internet",
-        speed: "850 MBPS",
-        price: "S/ 59,95",
-        priceNote: "x 1 mes",
-        originalPrice: "S/119,90",
-        brandText: "WIN TV PLUS",
-        brandImage: "/assets/img/plan/wintvplus.png",
-        addons: [],
-      },
-      {
-        id: "fibra-600",
-        title: "100% Fibra Óptica Internet",
-        speed: "1000 MBPS",
-        price: "S/ 69,95",
-        priceNote: "x 1 mes",
-        originalPrice: "S/139,90",
-        brandText: "winTV L1 MAX",
-        brandImage: "/assets/img/plan/wintvplus.png",
-        addons: [
-          {
-            id: "mesh",
-            image: "/assets/img/plan/mesh-optical.png",
-            topText: "Incluye Gratis",
-            bottomText: "1 Mesh",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "internet-tv-plus-premium",
-    label: "WIN TV PREMIUM",
-    plans: [
-      {
-        id: "premium-800",
-        title: "100% Fibra Óptica Internet",
-        speed: "850 MBPS",
-        price: "S/ 64,45",
-        priceNote: "x 1 mes",
-        originalPrice: "S/128,90",
-        brandText: "winTV Premium",
-        brandImage: "/assets/img/plan/wintv-prem.png",
-        addons: [],
-      },
-      {
-        id: "premium-500",
-        title: "100% Fibra Óptica Internet",
-        speed: "1000 MBPS",
-        price: "S/ 74,45",
-        priceNote: "x 1 mes",
-        originalPrice: "S/148,90",
-        brandText: "winTV Premium",
-        brandImage: "/assets/img/plan/wintv-prem.png",
-        addons: [
-          {
-            id: "mesh",
-            image: "/assets/img/plan/mesh-optical.png",
-            topText: "Incluye Gratis",
-            bottomText: "1 Mesh",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "internet-tv-l1-max",
-    label: "WIN TV L1 MAX",
-    plans: [
-      {
-        id: "l1-700",
-        title: "100% Fibra Óptica Internet",
-        speed: "850 MBPS",
-        price: "S/ 72,45",
-        priceNote: "x 1 mes",
-        originalPrice: "S/144,90",
-        brandText: "winTV L1 MAX",
-        brandImage: "/assets/img/plan/wintv_l1max.png",
-        addons: [],
-      },
-      {
-        id: "l1-400",
-        title: "100% Fibra Óptica Internet",
-        speed: "1000 MBPS",
-        price: "S/ 82,45",
-        priceNote: "x 1 mes",
-        originalPrice: "S/164,90",
-        brandText: "winTV L1 MAX",
-        brandImage: "/assets/img/plan/wintv_l1max.png",
-        addons: [
-          {
-            id: "mesh",
-            image: "/assets/img/plan/mesh-optical.png",
-            topText: "Incluye Gratis",
-            bottomText: "1 Mesh",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "internet-tv-l1-max-premium",
-    label: "WIN TV L1 MAX PREMIUM",
-    plans: [
-      {
-        id: "premium-max-900",
-        title: "100% Fibra Óptica Internet",
-        speed: "850 MBPS",
-        price: "S/ 77,45",
-        priceNote: "x 1 mes",
-        originalPrice: "S/154,90",
-        brandText: "winTV L1 MAX Premium",
-        brandImage: "/assets/img/plan/wintv_l1max_prem.png",
-        addons: [],
-      },
-      {
-        id: "premium-max-500",
-        title: "100% Fibra Óptica Internet",
-        speed: "1000 MBPS",
-        price: "S/ 87,45",
-        priceNote: "x 1 mes",
-        originalPrice: "S/174,90",
-        brandText: "winTV L1 MAX Premium",
-        brandImage: "/assets/img/plan/wintv_l1max_prem.png",
-        addons: [
-          {
-            id: "mesh",
-            image: "/assets/img/plan/mesh-optical.png",
-            topText: "Incluye Gratis",
-            bottomText: "1 Mesh",
-          },
-        ],
-      },
-    ],
-  },
-];
+const PLAN_SLIDER_CONTENT = HOME_PAGE_CONTENT.PLAN_SLIDER;
+const SERVICE_GROUPS = PLAN_SLIDER_CONTENT.SERVICE_GROUPS;
+const CTA_LABEL = PLAN_SLIDER_CONTENT.CTA_LABEL;
+const EMPTY_STATE = PLAN_SLIDER_CONTENT.EMPTY_STATE;
+const LABELS = PLAN_SLIDER_CONTENT.LABELS;
 
-// DGO Services and Plans
-export const DGO_SERVICES = [
-  {
-    id: "dgo",
-    label: "DGO BASICO",
-    plans: [
-      {
-        id: "dgo-basico-1",
-        title: "100% Fibra Óptica Internet",
-        speed: "850 MBPS",
-        price: "S/ 94,00",
-        priceNote: "X 1 mes",
-        originalPrice: "S/188,00",
-        brandText: "DGO",
-        brandImage: "/assets/img/plan/dgo-basico.png",
-        addons: [],
-      },
-      {
-        id: "dgo-basico-2",
-        title: "100% Fibra Óptica Internet",
-        speed: "1000 MBPS",
-        price: "S/ 104,00",
-        priceNote: "X 1 mes",
-        originalPrice: "S/208,00",
-        brandText: "DGO",
-        brandImage: "/assets/img/plan/dgo-basico.png",
-        addons: [
-          {
-            id: "mesh",
-            image: "/assets/img/plan/mesh-optical.png",
-            topText: "Incluye Gratis",
-            bottomText: "1 Mesh",
-          },
-        ],
-      },
-    ],
-  },
-    {
-    id: "dgo-full",
-    label: "DGO FULL",
-    plans: [
-      {
-        id: "dgo-full-1",
-        title: "100% Fibra Óptica Internet",
-        speed: "850 MBPS",
-        price: "S/ 97,50",
-        priceNote: "X 1 mes",
-        originalPrice: "S/195,00",
-        brandText: "DGO",
-        brandImage: "/assets/img/plan/dgo-full.png",
-        addons: [],
-      },
-      {
-        id: "dgo-full-2",
-        title: "100% Fibra Óptica Internet",
-        speed: "1000 MBPS",
-        price: "S/ 107,50",
-        priceNote: "X 1 mes",
-        originalPrice: "S/215,00",
-        brandText: "DGO",
-        brandImage: "/assets/img/plan/dgo-full.png",
-        addons: [
-          {
-            id: "mesh",
-            image: "/assets/img/plan/mesh-optical.png",
-            topText: "Incluye Gratis",
-            bottomText: "1 Mesh",
-          },
-        ],
-      },
-    ],
-  },
-];
-
-const SERVICE_GROUPS = {
-  wintv: WINTV_SERVICES,
-  dgo: DGO_SERVICES,
-};
-
-const PlanSlider = ({ services, service = "wintv" }) => {
+const PlanSlider = ({
+  services,
+  service = Object.keys(SERVICE_GROUPS)[0] || "wintv",
+}) => {
   const resolvedServices = useMemo(() => {
     if (services?.length) return services;
     return SERVICE_GROUPS[service] || [];
@@ -271,14 +58,14 @@ const PlanSlider = ({ services, service = "wintv" }) => {
           {plan.brandImage ? (
             <Image
               src={plan.brandImage}
-              alt={plan.brandAlt || "Logo del plan"}
+              alt={plan.brandAlt || LABELS.BRAND_ALT}
               width={140}
               height={25}
               className="plan-card__brand-img"
               style={{ objectFit: "contain" }}
             />
           ) : (
-            <span>{plan.brandText || "Marca"}</span>
+            <span>{plan.brandText || LABELS.BRAND_FALLBACK}</span>
           )}
         </div>
       </div>
@@ -289,7 +76,7 @@ const PlanSlider = ({ services, service = "wintv" }) => {
       </div>
       {plan.originalPrice ? (
         <div className="plan-card__original">
-          Precio regular <s>{plan.originalPrice}</s>
+          {LABELS.ORIGINAL_PRICE_PREFIX} <s>{plan.originalPrice}</s>
         </div>
       ) : null}
 
@@ -301,7 +88,7 @@ const PlanSlider = ({ services, service = "wintv" }) => {
               {addon.image ? (
                 <Image
                   src={addon.image}
-                  alt={addon.alt || addon.topText || "Addon"}
+                  alt={addon.alt || addon.topText || LABELS.ADDON_FALLBACK}
                   width={60}
                   height={60}
                   className="plan-card__addon-image"
@@ -317,7 +104,7 @@ const PlanSlider = ({ services, service = "wintv" }) => {
       ) : null}
 
       <button className="theme-btn contact-us-popup-modal">
-        <span>¡Quiero este plan!</span>
+        <span>{CTA_LABEL}</span>
       </button>
     </div>
   );
@@ -362,11 +149,11 @@ const PlanSlider = ({ services, service = "wintv" }) => {
                 <SwiperSlide className="swiper-slide">
                   <div className="pricing-card-items text-center">
                     <div className="pricing-header">
-                      <h6>Planes próximamente</h6>
-                      <h3>Estamos preparando más opciones</h3>
+                      <h6>{EMPTY_STATE.TITLE}</h6>
+                      {EMPTY_STATE.SUBTITLE ? <h3>{EMPTY_STATE.SUBTITLE}</h3> : null}
                     </div>
                     <div className="price-list">
-                      <p className="mb-0">Vuelve pronto para ver las nuevas ofertas.</p>
+                      {EMPTY_STATE.BODY ? <p className="mb-0">{EMPTY_STATE.BODY}</p> : null}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -386,11 +173,11 @@ const PlanSlider = ({ services, service = "wintv" }) => {
             <div className="plan-grid-item">
               <div className="pricing-card-items text-center">
                 <div className="pricing-header">
-                  <h6>Planes próximamente</h6>
-                  <h3>Estamos preparando más opciones</h3>
+                  <h6>{EMPTY_STATE.TITLE}</h6>
+                  {EMPTY_STATE.SUBTITLE ? <h3>{EMPTY_STATE.SUBTITLE}</h3> : null}
                 </div>
                 <div className="price-list">
-                  <p className="mb-0">Vuelve pronto para ver las nuevas ofertas.</p>
+                  {EMPTY_STATE.BODY ? <p className="mb-0">{EMPTY_STATE.BODY}</p> : null}
                 </div>
               </div>
             </div>

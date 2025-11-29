@@ -1,6 +1,9 @@
 import Link from "next/link";
-import {WHATSAPP_PHONE_LINK,WHATSAPP_PHONE_CLEAN} from "@/lib/constants";
+import { Fragment } from "react";
+import {WHATSAPP_PHONE_LINK,WHATSAPP_PHONE_CLEAN, HOME_PAGE_CONTENT} from "@/lib/constants";
 import { COMPANY_INFO } from "@/lib/constants";
+
+const FOOTER1_CONTENT = HOME_PAGE_CONTENT.FOOTER1;
 
 const Footer = ({ footer }) => {
   switch (footer) {
@@ -32,7 +35,7 @@ const Footer1 = () => {
               <div className="single-footer-widget">
                 <div className="widget-head">
                   <Link href="/">
-                    <img src="assets/img/logo/logo.svg" alt="logo-img" />
+                    <img src={FOOTER1_CONTENT.LOGO_SRC} alt={FOOTER1_CONTENT.LOGO_ALT} />
                   </Link>
                 </div>
               </div>
@@ -46,7 +49,7 @@ const Footer1 = () => {
                 </div>
                 <div className="footer-apps-items">
                   <div className="support-text">
-                    <p>Llámanos al</p>
+                    <p>{FOOTER1_CONTENT.CALL_LABEL}</p>
                     <h3>
                       <a href={`${WHATSAPP_PHONE_LINK}`} target="_blank">{WHATSAPP_PHONE_CLEAN}</a>
                     </h3>
@@ -61,19 +64,24 @@ const Footer1 = () => {
         <div className="container">
           <div className="footer-wrapper d-flex align-items-center justify-content-between">
             <p className="wow fadeInLeft color-2" data-wow-delay=".3s">
-              {COMPANY_INFO.NAME} © {currentYear}. Todos los derechos reservados
+              {COMPANY_INFO.NAME} © {currentYear}. {FOOTER1_CONTENT.COPYRIGHT_SUFFIX}
             </p>
             <ul className="footer-menu wow fadeInRight" data-wow-delay=".5s">
               <li>
-                <Link href="politica-privacidad">Política de Privacidad</Link>
+                <Link href={FOOTER1_CONTENT.PRIVACY_PATH}>{FOOTER1_CONTENT.PRIVACY_LABEL}</Link>
               </li>
             </ul>
           </div>
           <div className="footer-meta d-flex flex-wrap gap-3 mt-3">
             <p className="footer-meta__item small mb-0">
-              “WIN” y su logotipo son marcas de WI-NET TELECOM S.A.C. (RUC 20521233991).<br style={{display: "block"}}/>
-              Comercializamos Internet Hogar. No ofrecemos juegos ni apuestas.<br style={{display: "block"}}/>
-              WI-NET TELECOM S.A.C. — Av. República de Panamá 3418–3420, Torre Barlovento, San Isidro, Lima · Central: ‪(+51) 01 707 3000‬ · 0800 741 00 · contacto@win.pe
+              {FOOTER1_CONTENT.META_LINES.map((line, index) => (
+                <Fragment key={`${line}-${index}`}>
+                  {line}
+                  {index < FOOTER1_CONTENT.META_LINES.length - 1 ? (
+                    <br style={{ display: "block" }} />
+                  ) : null}
+                </Fragment>
+              ))}
             </p>
           </div>
         </div>

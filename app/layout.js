@@ -9,10 +9,11 @@ import "@css/nice-select.css";
 import "@scss/main.scss";
 import "./globals.css";
 import Preloader from "@/layouts/Preloader";
+import { HOME_PAGE_CONTENT } from "@/lib/constants";
 
 export const metadata = {
-  title: "WIN: Internet 100% fibra óptica",
-  description: "Nuestro Internet Hogar 100% fibra óptica te brindará una conexión simétrica y de alta velocidad para trabajar, estudiar o jugar en línea.",
+  title: HOME_PAGE_CONTENT.METADATA.TITLE,
+  description: HOME_PAGE_CONTENT.METADATA.DESCRIPTION,
 };
 
 export default function RootLayout({ children }) {
