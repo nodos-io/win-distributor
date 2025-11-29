@@ -76,7 +76,7 @@
     .hero-image {
       position: relative;
       &::before {
-        opacity: 0.1;
+        opacity: 0.0;
       }
       img{
         width: 100%;
@@ -208,6 +208,10 @@ section.feature-icon-box-area{
       height: auto;
       display: block;
     }
+
+    .dgo-logo{
+      margin-bottom: -8px;
+    }
   }
   &.section-padding{
     padding: 40px 0;
@@ -217,6 +221,7 @@ section.feature-icon-box-area{
   }
   .section-title span{
     margin-top: 15px;
+    margin-bottom: 5px;
     color: var(--black);
     text-decoration: none;
   }
@@ -242,11 +247,15 @@ section.feature-icon-box-area{
       span{
         color: var(--theme);
         font-size: 30px;
-        margin:0;
+        margin-bottom: -4px;
       }
 
       .plan-headline__logo{
         max-height: 30px;
+      }
+
+      .dgo-logo{
+        margin-bottom: -6px;
       }
     }
   }
@@ -382,6 +391,7 @@ section.feature-icon-box-area{
   .pricing-card-items{
     height: 100%;
     width: 100%;
+    min-height: clamp(480px, 60vw, 480px);
     background: #fff;
     border: 1px solid var(--theme);
     box-shadow: 0 12px 30px rgba(0,0,0,0.06);
@@ -412,6 +422,7 @@ section.feature-icon-box-area{
     }
     .swiper-slide{
       display: flex;
+      align-items: stretch;
       justify-content: center;
       @include breakpoint(max-md){
         width: 100% !important;
@@ -587,4 +598,8 @@ section.feature-icon-box-area{
   .hero-1 .hero-form-overlay {
       margin-top: 0px !important;
   }
+}
+
+.mfp-content button.mfp-close{
+  color:black !important;
 }

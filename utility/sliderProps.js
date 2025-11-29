@@ -24,12 +24,16 @@ export const sliderProps = {
   home1: {
     loop: true,
     slidesPerView: 1,
-    effect: "fade",
-    autoplay: false,
+    effect: "slide",
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 500,
     autoHeight: true,
     navigation: {
-      nextEl: ".array-prev",
-      prevEl: ".array-next",
+      nextEl: ".array-next",
+      prevEl: ".array-prev",
     },
   },
   home2: {
@@ -52,7 +56,7 @@ export const sliderProps = {
   },
   planSlider: {
     spaceBetween: 20,
-    speed: 2000,
+    speed: 500,
     loop: false,
     centeredSlides: true,
     pagination: {

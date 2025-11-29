@@ -34,7 +34,7 @@ const page = () => {
           <div className="section-title text-center">
             <div className="plan-headline">
               <h2 style={{color:"black"}}>100% FIBRA</h2>
-              <span style={{color: "var(--theme)", fontSize: "50px"}}>+</span>
+              <span style={{color: "var(--theme)"}}>+</span>
               <Image
                 src="/assets/img/plan/wintv_logo.png"
                 alt="WinTV Logo"
@@ -54,13 +54,13 @@ const page = () => {
           <div className="section-title text-center">
             <div className="plan-headline">
               <h2 style={{color:"black"}}>100% FIBRA</h2>
-              <span style={{color: "var(--theme)", fontSize: "50px"}}>+</span>
+              <span style={{color: "var(--theme)"}}>+</span>
               <Image
                 src="/assets/img/plan/dgo_logo.png"
                 alt="DGO Logo"
                 width={200}
                 height={80}
-                className="plan-headline__logo"
+                className="plan-headline__logo dgo-logo"
                 priority
               />
             </div>

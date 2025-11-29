@@ -695,6 +695,13 @@
 			}
 		}
 	}
+
+	.link-btn{
+		display: flex;
+		i{
+			align-self: anchor-center;
+		}
+	}
 }
 
 .header-2 {

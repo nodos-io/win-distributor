@@ -73,7 +73,7 @@ const Footer1 = () => {
             <p className="footer-meta__item small mb-0">
               “WIN” y su logotipo son marcas de WI-NET TELECOM S.A.C. (RUC 20521233991).<br style={{display: "block"}}/>
               Comercializamos Internet Hogar. No ofrecemos juegos ni apuestas.<br style={{display: "block"}}/>
-              WI-NET TELECOM S.A.C. — Av. República de Panamá 3418–3420, Torre Barlovento, San Isidro, Lima · Central: ‪(+51) 01 707 3000‬ · 0800 741 00 · contacto@win.pe
+              WI-NET TELECOM S.A.C. - Av. República de Panamá 3418-3420, Torre Barlovento, San Isidro, Lima · Central: (+51) 01 707 3000 · 0800 741 00 · contacto@win.pe
             </p>
           </div>
         </div>
