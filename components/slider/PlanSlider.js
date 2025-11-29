@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // WINTV Services and Plans
-export const WINTV_SERVICES = [
+const WINTV_SERVICES = [
   {
     id: "internet-tv-plus-fibra",
     label: "WIN TV PLUS",
@@ -150,7 +150,7 @@ export const WINTV_SERVICES = [
 ];
 
 // DGO Services and Plans
-export const DGO_SERVICES = [
+const DGO_SERVICES = [
   {
     id: "dgo",
     label: "DGO BASICO",
