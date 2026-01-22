@@ -2,11 +2,9 @@
 import useClickOutside from "@/utility/useClickOutside";
 import { Fragment, useEffect, useState } from "react";
 import ContactUsForm from "@/components/form/ContactUsForm";
-import { HOME_PAGE_CONTENT } from "@/lib/constants";
+import { HOME_PAGE_CONTENT, WHATSAPP_PHONE_LINK } from "@/lib/hogar-constants";
 
-const CONTACT_POPUP = HOME_PAGE_CONTENT.CONTACT_POPUP;
-
-const ContactUsPopup_ = ({ close }) => {
+const ContactUsPopup_ = ({ close, popupContent, formContent, whatsappLink }) => {
   const domNode = useClickOutside(() => {
     close(false);
   });
@@ -22,23 +20,27 @@ const ContactUsPopup_ = ({ close }) => {
         <div className="mfp-container popup-container mfp-s-ready">
           <div className="mfp-content" ref={domNode}>
             <button
-                title={CONTACT_POPUP.CLOSE_LABEL}
+                title={popupContent.CLOSE_LABEL}
                 type="button"
                 className="mfp-close"
                 onClick={() => close(false)}
               >
               ×
             </button>
-            <ContactUsForm/>
+            <ContactUsForm formContent={formContent} whatsappLink={whatsappLink} />
           </div>
-          <div className="mfp-preloader">{CONTACT_POPUP.LOADING_TEXT}</div>
+          <div className="mfp-preloader">{popupContent.LOADING_TEXT}</div>
         </div>
       </div>
     </Fragment>
   );
 };
 
-const ContactUsPopup = () => {
+const ContactUsPopup = ({
+  popupContent = HOME_PAGE_CONTENT.CONTACT_POPUP,
+  formContent = HOME_PAGE_CONTENT.CONTACT_FORM,
+  whatsappLink = WHATSAPP_PHONE_LINK,
+}) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -56,7 +58,14 @@ const ContactUsPopup = () => {
   }, []);
 
   return (
-    open && <ContactUsPopup_ close={() => setOpen(false)} />
+    open && (
+      <ContactUsPopup_
+        close={() => setOpen(false)}
+        popupContent={popupContent}
+        formContent={formContent}
+        whatsappLink={whatsappLink}
+      />
+    )
   );
 };
 

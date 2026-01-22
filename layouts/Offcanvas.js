@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { MobileMenu } from "./Menus";
-import { WHATSAPP_PHONE_LINK, WHATSAPP_PHONE_CLEAN } from "@/lib/constants";
-const Offcanvas = ({ closeSidebar, sidebar, single }) => {
+import { WHATSAPP_PHONE_LINK, WHATSAPP_PHONE_CLEAN } from "@/lib/hogar-constants";
+const Offcanvas = ({ closeSidebar, sidebar, single, menus, whatsappPhoneLink = WHATSAPP_PHONE_LINK, whatsappPhoneClean = WHATSAPP_PHONE_CLEAN }) => {
   return (
     <Fragment>
       <div className="fix-area">
@@ -22,7 +22,7 @@ const Offcanvas = ({ closeSidebar, sidebar, single }) => {
                 </div>
               </div>
               <div className="mobile-menu fix mb-3 mean-container">
-                <MobileMenu single={single} />
+                <MobileMenu single={single} menus={menus} />
               </div>
               <div className="offcanvas__contact">
                 <h4>Información</h4>
@@ -33,12 +33,12 @@ const Offcanvas = ({ closeSidebar, sidebar, single }) => {
                     </div>
                     <div className="offcanvas__contact-text">
                       <a
-                        href={`${WHATSAPP_PHONE_LINK}`}
+                        href={`${whatsappPhoneLink}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => closeSidebar()}
                       >
-                        {WHATSAPP_PHONE_CLEAN}
+                        {whatsappPhoneClean}
                       </a>
                     </div>
                   </li>

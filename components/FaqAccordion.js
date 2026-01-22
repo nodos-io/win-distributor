@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Accordion } from "react-bootstrap";
-import { HOME_PAGE_CONTENT } from "@/lib/constants";
+import { HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 
 const buildColumns = (items = []) => {
   const left = [];

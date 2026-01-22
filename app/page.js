@@ -3,14 +3,14 @@ import PlanSlider from "@/components/slider/PlanSlider";
 import NetBandLayout from "@/layouts/NetBandLayout";
 import Image from "next/image";
 import FaqAccordion from "@/components/FaqAccordion";
-import { HOME_PAGE_CONTENT } from "@/lib/constants";
+import { HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 import { Fragment } from "react";
 
 const page = () => {
   const { DISCOUNT_CALLOUT, PLAN_SECTIONS, FEATURE_ICONS, FAQ } = HOME_PAGE_CONTENT;
 
   return (
-    <NetBandLayout header={1}>
+    <NetBandLayout header={1} showControllerIcon>
       {/*<< Hero Section Start >>*/}
       <Home1 />
       {/* Discount callout */}

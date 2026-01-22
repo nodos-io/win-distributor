@@ -9,7 +9,7 @@ import "@css/nice-select.css";
 import "@scss/main.scss";
 import "./globals.css";
 import Preloader from "@/layouts/Preloader";
-import { HOME_PAGE_CONTENT } from "@/lib/constants";
+import { HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 
 export const metadata = {
   title: HOME_PAGE_CONTENT.METADATA.TITLE,

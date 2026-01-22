@@ -4,11 +4,19 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import Menus from "./Menus";
 import Offcanvas from "./Offcanvas";
-import {WHATSAPP_PHONE_LINK, WHATSAPP_PHONE_CLEAN, HOME_PAGE_CONTENT} from "@/lib/constants";
+import { WHATSAPP_PHONE_LINK, WHATSAPP_PHONE_CLEAN, HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 
-const HEADER1_CONTENT = HOME_PAGE_CONTENT.HEADER1;
+const DEFAULT_HEADER1_CONTENT = HOME_PAGE_CONTENT.HEADER1;
 
-const Header = ({ header, single, menus }) => {
+const Header = ({
+  header,
+  single,
+  menus,
+  mobileMenus,
+  headerContent = DEFAULT_HEADER1_CONTENT,
+  whatsappPhoneLink = WHATSAPP_PHONE_LINK,
+  whatsappPhoneClean = WHATSAPP_PHONE_CLEAN,
+}) => {
   const [sidebarToggle, setSidebarToggle] = useState(false);
   const openSidebar = () => setSidebarToggle(true),
     closeSidebar = () => setSidebarToggle(false);
@@ -17,7 +25,15 @@ const Header = ({ header, single, menus }) => {
     switch (header) {
       case 1:
         return (
-          <Header1 openSidebar={openSidebar} single={single} menus={menus} />
+          <Header1
+            openSidebar={openSidebar}
+            closeSidebar={closeSidebar}
+            single={single}
+            menus={menus}
+            headerContent={headerContent}
+            whatsappPhoneLink={whatsappPhoneLink}
+            whatsappPhoneClean={whatsappPhoneClean}
+          />
         );
       case 2:
         return (
@@ -45,13 +61,16 @@ const Header = ({ header, single, menus }) => {
         sidebar={sidebarToggle}
         closeSidebar={closeSidebar}
         single={single}
+        menus={mobileMenus || menus}
+        whatsappPhoneLink={whatsappPhoneLink}
+        whatsappPhoneClean={whatsappPhoneClean}
       />
     </Fragment>
   );
 };
 export default Header;
 
-const Header1 = ({ openSidebar, single, menus }) => {
+const Header1 = ({ openSidebar, closeSidebar, single, menus, headerContent, whatsappPhoneLink, whatsappPhoneClean }) => {
   return (
     <Fragment>
       <header className="header-section-1">
@@ -62,7 +81,7 @@ const Header1 = ({ openSidebar, single, menus }) => {
                 <div className="header-left">
                   <div className="logo">
                     <Link href="/" className="header-logo">
-                      <img src={HEADER1_CONTENT.LOGO_SRC} alt={HEADER1_CONTENT.LOGO_ALT} />
+                      <img src={headerContent.LOGO_SRC} alt={headerContent.LOGO_ALT} />
                     </Link>
                   </div>
                   <div className="mean__menu-wrapper">
@@ -74,22 +93,22 @@ const Header1 = ({ openSidebar, single, menus }) => {
                 <div className="header-right d-flex justify-content-end align-items-center">
                   <div className="contact-info">
                     <div className="content">
-                      <p>{HEADER1_CONTENT.CALL_LABEL}</p>
+                      <p>{headerContent.CALL_LABEL}</p>
                       <h6>
                         <a
-                          href={`${WHATSAPP_PHONE_LINK}`}
+                          href={`${whatsappPhoneLink}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => closeSidebar()}
                         >
-                          {WHATSAPP_PHONE_CLEAN}
+                          {whatsappPhoneClean}
                         </a>
                       </h6>
                     </div>
                   </div>
                   <div className="header-button">
                     <button className="link-btn contact-us-popup-modal">
-                      <span>{HEADER1_CONTENT.CTA_LABEL}</span>
+                      <span>{headerContent.CTA_LABEL}</span>
                       <i className="fas fa-chevron-right" />
                     </button>
                   </div>

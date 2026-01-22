@@ -1,5 +1,5 @@
 import NetBandLayout from "@/layouts/NetBandLayout";
-import { COMPANY_INFO } from "@/lib/constants";
+import { COMPANY_INFO } from "@/lib/hogar-constants";
 import Link from "next/link";
 
 const page = () => {

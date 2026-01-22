@@ -2,24 +2,24 @@
 
 import { useState, useEffect } from "react";
 import { submitContactForm } from "@/components/form/GoogleSheetContactUsForm.action";
-import { WHATSAPP_PHONE_LINK, HOME_PAGE_CONTENT } from "@/lib/constants";
+import { WHATSAPP_PHONE_LINK, HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 
-const FORM_CONTENT = HOME_PAGE_CONTENT.CONTACT_FORM;
+const DEFAULT_FORM_CONTENT = HOME_PAGE_CONTENT.CONTACT_FORM;
 
-const SuccessMessage = ({ countdown, stopRedirect }) => (
+const SuccessMessage = ({ countdown, stopRedirect, formContent, whatsappLink }) => (
   <div
     className="alert border-0 shadow-sm p-3 rounded-3 success-message"
     style={{ backgroundColor: "#fff7ef" }}
   >
     <div className="d-flex flex-column gap-2">
       <div className="fw-semibold" style={{ color: "var(--theme)" }}>
-        {FORM_CONTENT.SUCCESS_MESSAGE}
+        {formContent.SUCCESS_MESSAGE}
       </div>
       <div className="small text-body">
-        {FORM_CONTENT.REDIRECT.NOTICE}
+        {formContent.REDIRECT.NOTICE}
       </div>
       <div className="d-flex align-items-center flex-wrap gap-2 small">
-        <span className="text-secondary">{FORM_CONTENT.REDIRECT.COUNTDOWN_LABEL}</span>
+        <span className="text-secondary">{formContent.REDIRECT.COUNTDOWN_LABEL}</span>
         <span
           id="countdown"
           className="badge text-bg-dark"
@@ -32,20 +32,20 @@ const SuccessMessage = ({ countdown, stopRedirect }) => (
           className="btn btn-outline-secondary btn-sm"
           onClick={stopRedirect}
         >
-          {FORM_CONTENT.REDIRECT.STOP_LABEL}
+          {formContent.REDIRECT.STOP_LABEL}
         </button>
       </div>
       <div className="small text-body">
-        {FORM_CONTENT.DIRECT_LINK_PROMPT}&nbsp;
-        <a href={WHATSAPP_PHONE_LINK} target="_blank" rel="noopener noreferrer" className="fw-semibold">
-          {FORM_CONTENT.DIRECT_LINK_LABEL}
+        {formContent.DIRECT_LINK_PROMPT}&nbsp;
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="fw-semibold">
+          {formContent.DIRECT_LINK_LABEL}
         </a>
       </div>
     </div>
   </div>
 );
 
-const ContactFormFields = ({ handleSubmit, submitting }) => (
+const ContactFormFields = ({ handleSubmit, submitting, formContent }) => (
   <form id="contact-us-form" method="POST" onSubmit={handleSubmit}>
     <div className="row g-4">
       <div className="col-lg-12 wow fadeInUp" data-wow-delay=".3s">
@@ -55,7 +55,7 @@ const ContactFormFields = ({ handleSubmit, submitting }) => (
             name="phone"
             id="phone"
             className="form-control"
-            placeholder={FORM_CONTENT.FIELDS.PHONE_PLACEHOLDER}
+            placeholder={formContent.FIELDS.PHONE_PLACEHOLDER}
           />
         </div>
       </div>
@@ -66,7 +66,7 @@ const ContactFormFields = ({ handleSubmit, submitting }) => (
             name="dni"
             id="dni"
             className="form-control"
-            placeholder={FORM_CONTENT.FIELDS.DNI_PLACEHOLDER}
+            placeholder={formContent.FIELDS.DNI_PLACEHOLDER}
           />
         </div>
       </div>
@@ -80,13 +80,13 @@ const ContactFormFields = ({ handleSubmit, submitting }) => (
             required
           />
           <label className="form-check-label form-contact-privacy" htmlFor="privacyPolicy">
-            {FORM_CONTENT.PRIVACY.LABEL_PREFIX}{" "}
+            {formContent.PRIVACY.LABEL_PREFIX}{" "}
             <a
-              href={FORM_CONTENT.PRIVACY.LINK_HREF}
+              href={formContent.PRIVACY.LINK_HREF}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {FORM_CONTENT.PRIVACY.LINK_LABEL}
+              {formContent.PRIVACY.LINK_LABEL}
             </a>
           </label>
         </div>
@@ -97,18 +97,22 @@ const ContactFormFields = ({ handleSubmit, submitting }) => (
           className={`theme-btn${submitting ? " btn-form-disabled" : ""}`}
           disabled={submitting}
         >
-          <span>{submitting ? FORM_CONTENT.BUTTONS.SUBMITTING : FORM_CONTENT.BUTTONS.DEFAULT}</span>
+          <span>{submitting ? formContent.BUTTONS.SUBMITTING : formContent.BUTTONS.DEFAULT}</span>
         </button>
       </div>
     </div>
   </form>
 );
 
-const ContactUsForm = () => {
+const ContactUsForm = ({ formContent = DEFAULT_FORM_CONTENT, whatsappLink = WHATSAPP_PHONE_LINK }) => {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [countdown, setCountdown] = useState(FORM_CONTENT.REDIRECT.SECONDS);
+  const [countdown, setCountdown] = useState(formContent.REDIRECT.SECONDS);
   const [redirectActive, setRedirectActive] = useState(true);
+
+  useEffect(() => {
+    setCountdown(formContent.REDIRECT.SECONDS);
+  }, [formContent]);
 
   useEffect(() => {
     if (success && redirectActive) {
@@ -118,12 +122,12 @@ const ContactUsForm = () => {
             clearInterval(timer);
             // Try opening in a new tab; fallback to same tab if blocked
             const newWindow = window.open(
-              WHATSAPP_PHONE_LINK,
+              whatsappLink,
               "_blank",
               "noopener,noreferrer"
             );
             if (!newWindow) {
-              window.location.href = WHATSAPP_PHONE_LINK;
+              window.location.href = whatsappLink;
             }
             return 0;
           }
@@ -132,7 +136,7 @@ const ContactUsForm = () => {
       }, 1000);
       return () => clearInterval(timer);
     }
-  }, [success, redirectActive]);
+  }, [success, redirectActive, whatsappLink]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -144,7 +148,7 @@ const ContactUsForm = () => {
       await submitContactForm(data);
       setSuccess(true);
       setRedirectActive(true);
-      setCountdown(FORM_CONTENT.REDIRECT.SECONDS);
+      setCountdown(formContent.REDIRECT.SECONDS);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -158,16 +162,16 @@ const ContactUsForm = () => {
   return (
     <div className="contact-us-container contact-form-items white-popup-block p-4 bg-white rounded shadow">
       <div className="contact-title">
-        <h3 className="center" style={{color: "var(--theme)", marginBottom: "15px"}}>{FORM_CONTENT.TITLE}</h3>
+        <h3 className="center" style={{color: "var(--theme)", marginBottom: "15px"}}>{formContent.TITLE}</h3>
         <h4 className="wow fadeInUp center" data-wow-delay=".3s" style={{marginBottom: "15px"}}>
-          {!success ? FORM_CONTENT.SUBTITLE : FORM_CONTENT.SUCCESS_SUBTITLE}
+          {!success ? formContent.SUBTITLE : formContent.SUCCESS_SUBTITLE}
         </h4>
         <p>&nbsp;</p>
       </div>
       {success ? (
-        <SuccessMessage countdown={countdown} stopRedirect={stopRedirect} />
+        <SuccessMessage countdown={countdown} stopRedirect={stopRedirect} formContent={formContent} whatsappLink={whatsappLink} />
       ) : (
-        <ContactFormFields handleSubmit={handleSubmit} submitting={submitting} />
+        <ContactFormFields handleSubmit={handleSubmit} submitting={submitting} formContent={formContent} />
       )}
     </div>
   );
