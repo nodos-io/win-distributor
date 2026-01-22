@@ -49,7 +49,15 @@ const Header = ({
         );
       default:
         return (
-          <Header1 openSidebar={openSidebar} single={single} menus={menus} />
+          <Header1
+            openSidebar={openSidebar}
+            closeSidebar={closeSidebar}
+            single={single}
+            menus={menus}
+            headerContent={headerContent}
+            whatsappPhoneLink={whatsappPhoneLink}
+            whatsappPhoneClean={whatsappPhoneClean}
+          />
         );
     }
   };

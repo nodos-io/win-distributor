@@ -68,7 +68,7 @@ const page = () => {
                             <li>
                               <strong>Teléfono/WhatsApp:</strong>&nbsp;
                               <Link 
-                                href={COMPANY_INFO.WHATSAPP.URL()} 
+                                href={COMPANY_INFO.WHATSAPP.URL} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                               >
