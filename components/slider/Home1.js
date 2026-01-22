@@ -3,10 +3,14 @@ import { sliderProps } from "@/utility/sliderProps";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactUsForm from "../form/ContactUsForm";
-import { HOME_PAGE_CONTENT } from "@/lib/constants";
+import { HOME_PAGE_CONTENT, WHATSAPP_PHONE_LINK } from "@/lib/hogar-constants";
 
-const Home1 = () => {
-  const slides = HOME_PAGE_CONTENT.HERO_SECTION.SLIDES || [];
+const Home1 = ({
+  content = HOME_PAGE_CONTENT,
+  formContent = HOME_PAGE_CONTENT.CONTACT_FORM,
+  whatsappLink = WHATSAPP_PHONE_LINK,
+}) => {
+  const slides = content?.HERO_SECTION?.SLIDES || [];
   const swiperRef = useRef(null);
   return (
     <section className="hero-section hero-1">
@@ -39,7 +43,7 @@ const Home1 = () => {
           <div className="row justify-content-between align-items-center h-100">
             <div className="col-xl-4">
               <div className="hero-content">
-                <ContactUsForm />
+                <ContactUsForm formContent={formContent} whatsappLink={whatsappLink} />
               </div>
             </div>
           </div>

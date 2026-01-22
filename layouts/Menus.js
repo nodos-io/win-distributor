@@ -1,7 +1,7 @@
 "use client";
 "use client";
 import Link from "next/link";
-import { HOME_PAGE_CONTENT } from "@/lib/constants";
+import { HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 
 const NAVIGATION = HOME_PAGE_CONTENT.NAVIGATION;
 

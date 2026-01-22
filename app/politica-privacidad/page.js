@@ -1,5 +1,5 @@
 import NetBandLayout from "@/layouts/NetBandLayout";
-import { COMPANY_INFO } from "@/lib/constants";
+import { COMPANY_INFO } from "@/lib/hogar-constants";
 import Link from "next/link";
 
 const page = () => {
@@ -68,7 +68,7 @@ const page = () => {
                             <li>
                               <strong>Teléfono/WhatsApp:</strong>&nbsp;
                               <Link 
-                                href={COMPANY_INFO.WHATSAPP.URL()} 
+                                href={COMPANY_INFO.WHATSAPP.URL} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                               >

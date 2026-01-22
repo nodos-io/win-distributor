@@ -4,22 +4,31 @@ import { sliderProps } from "@/utility/sliderProps";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { HOME_PAGE_CONTENT } from "@/lib/constants";
+import { HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 
-const PLAN_SLIDER_CONTENT = HOME_PAGE_CONTENT.PLAN_SLIDER;
-const SERVICE_GROUPS = PLAN_SLIDER_CONTENT.SERVICE_GROUPS;
-const CTA_LABEL = PLAN_SLIDER_CONTENT.CTA_LABEL;
-const EMPTY_STATE = PLAN_SLIDER_CONTENT.EMPTY_STATE;
-const LABELS = PLAN_SLIDER_CONTENT.LABELS;
+const DEFAULT_PLAN_SLIDER_CONTENT = HOME_PAGE_CONTENT.PLAN_SLIDER;
 
 const PlanSlider = ({
   services,
-  service = Object.keys(SERVICE_GROUPS)[0] || "wintv",
+  service,
+  planSliderContent = DEFAULT_PLAN_SLIDER_CONTENT,
 }) => {
+  const planContent = planSliderContent || DEFAULT_PLAN_SLIDER_CONTENT;
+  const SERVICE_GROUPS = planContent.SERVICE_GROUPS || {};
+  const CTA_LABEL = planContent.CTA_LABEL;
+  const EMPTY_STATE = planContent.EMPTY_STATE;
+  const LABELS = planContent.LABELS;
+
+  const defaultServiceKey = useMemo(
+    () => Object.keys(SERVICE_GROUPS)[0] || "wintv",
+    [SERVICE_GROUPS]
+  );
+
   const resolvedServices = useMemo(() => {
+    const resolvedKey = service || defaultServiceKey;
     if (services?.length) return services;
-    return SERVICE_GROUPS[service] || [];
-  }, [services, service]);
+    return SERVICE_GROUPS[resolvedKey] || [];
+  }, [services, service, SERVICE_GROUPS, defaultServiceKey]);
 
   const paginationId = useMemo(
     () => `plan-slider-${Math.random().toString(36).slice(2, 8)}`,
@@ -51,23 +60,23 @@ const PlanSlider = ({
       <div className="plan-card__top">
         <p className="plan-card__title">{plan.title}</p>
         <p className="plan-card__speed">{plan.speed}</p>
-        <div className="plan-card__plus-row">
-          <span className="plan-card__plus">+</span>
-        </div>
-        <div className="plan-card__brand">
-          {plan.brandImage ? (
-            <Image
-              src={plan.brandImage}
-              alt={plan.brandAlt || LABELS.BRAND_ALT}
-              width={140}
-              height={25}
-              className="plan-card__brand-img"
-              style={{ objectFit: "contain" }}
-            />
-          ) : (
-            <span>{plan.brandText || LABELS.BRAND_FALLBACK}</span>
-          )}
-        </div>
+        {plan.brandImage ? (
+          <>
+            <div className="plan-card__plus-row">
+              <span className="plan-card__plus">+</span>
+            </div>
+            <div className="plan-card__brand">
+              <Image
+                src={plan.brandImage}
+                alt={plan.brandAlt || LABELS.BRAND_ALT}
+                width={140}
+                height={25}
+                className="plan-card__brand-img"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          </>
+        ) : null}
       </div>
 
       <div className="plan-card__price-row">
@@ -89,10 +98,10 @@ const PlanSlider = ({
                 <Image
                   src={addon.image}
                   alt={addon.alt || addon.topText || LABELS.ADDON_FALLBACK}
-                  width={60}
-                  height={60}
+                  width={addon.imageWidth ?? 60}
+                  height={addon.imageHeight ?? 60}
                   className="plan-card__addon-image"
-                  style={{ objectFit: "contain" }}
+                  style={{ objectFit: "contain", maxWidth: addon.maxWidth ?? "100%" }}
                 />
               ) : null}
               {addon.bottomText ? (
