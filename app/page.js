@@ -5,12 +5,26 @@ import Image from "next/image";
 import FaqAccordion from "@/components/FaqAccordion";
 import { HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 import { Fragment } from "react";
+import Script from "next/script";
+import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
+
+const faqJsonLd = buildFaqJsonLd(HOME_PAGE_CONTENT.FAQ.ITEMS);
+
+export const metadata = buildPageMetadata({
+  content: HOME_PAGE_CONTENT,
+  canonicalPath: "/",
+});
 
 const page = () => {
   const { DISCOUNT_CALLOUT, PLAN_SECTIONS, FEATURE_ICONS, FAQ } = HOME_PAGE_CONTENT;
 
   return (
     <NetBandLayout header={1} showControllerIcon>
+      {faqJsonLd ? (
+        <Script id="home-faq-jsonld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(faqJsonLd)}
+        </Script>
+      ) : null}
       {/*<< Hero Section Start >>*/}
       <Home1 />
       {/* Discount callout */}

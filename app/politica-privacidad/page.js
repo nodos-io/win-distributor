@@ -1,6 +1,13 @@
 import NetBandLayout from "@/layouts/NetBandLayout";
-import { COMPANY_INFO } from "@/lib/hogar-constants";
+import { COMPANY_INFO, HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  content: HOME_PAGE_CONTENT,
+  pageName: "Política de privacidad",
+  canonicalPath: "/politica-privacidad",
+});
 
 const page = () => {
   return (

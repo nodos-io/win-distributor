@@ -10,6 +10,16 @@ import {
   WHATSAPP_PHONE_CLEAN,
 } from "@/lib/gamer-constants";
 import { Fragment } from "react";
+import Script from "next/script";
+import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
+
+const faqJsonLd = buildFaqJsonLd(HOME_PAGE_CONTENT.FAQ.ITEMS);
+
+export const metadata = buildPageMetadata({
+  content: HOME_PAGE_CONTENT,
+  pageName: "Plan Gamer",
+  canonicalPath: "/plan-gamer",
+});
 
 const page = () => {
   const {
@@ -50,6 +60,11 @@ const page = () => {
       whatsappPhoneLink={WHATSAPP_PHONE_LINK}
       whatsappPhoneClean={WHATSAPP_PHONE_CLEAN}
     >
+      {faqJsonLd ? (
+        <Script id="plan-gamer-faq-jsonld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(faqJsonLd)}
+        </Script>
+      ) : null}
       <div className="plan-gamer-page">
         {/*<< Hero Section Start >>*/}
         <Home1 content={HOME_PAGE_CONTENT} formContent={CONTACT_FORM} whatsappLink={WHATSAPP_PHONE_LINK} />
