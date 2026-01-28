@@ -1,5 +1,6 @@
 "use client";
 
+import { HOME_PAGE_CONTENT } from "@/lib/gamer-constants";
 import { sliderProps } from "@/utility/sliderProps";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -1062,6 +1063,65 @@ export const MovieSlider4 = () => {
                 </div>
               </div>
             </SwiperSlide>
+          </div>
+        </Swiper>
+      </div>
+    </section>
+  );
+};
+
+export const MovieSlider5 = ({ content = HOME_PAGE_CONTENT.MOVIE_SLIDER_5 }) => {
+  const { TITLE, ITEMS } = content;
+  return (
+    <section className="show-section section-padding movie-slider-5" id="shows">
+      <div className="container">
+        <div className="title-section-area">
+          <div className="section-title wow fadeInUp" data-wow-delay=".3s">
+            <h2 className="text-white">
+              {TITLE.TEXT}
+              {TITLE.HIGHLIGHT ? (
+                <>
+                  {" "}
+                  <span>{TITLE.HIGHLIGHT}</span>
+                </>
+              ) : null}
+            </h2>
+          </div>
+          <div
+            className="array-button style-2 wow fadeInUp"
+            data-wow-delay=".5s"
+          >
+            <button className="array-prev">
+              <i className="fas fa-chevron-left" />
+            </button>
+            <button className="array-next">
+              <i className="fas fa-chevron-right" />
+            </button>
+          </div>
+        </div>
+        <Swiper {...sliderProps.showsSlider5} className="swiper shows-slider">
+          <div className="swiper-wrapper">
+            {ITEMS.map((item) => {
+              const hasBody = item.EMPHASIS || item.DESCRIPTION;
+              return (
+                <SwiperSlide className="swiper-slide" key={item.id}>
+                  <div className="shows-card-items shows-card-items--overlay">
+                    <div className="shows-image">
+                      <img src={item.IMAGE} alt={item.ALT || item.TITLE} />
+                      <div className="shows-overlay">
+                        <h4>{item.TITLE}</h4>
+                        {hasBody ? (
+                          <p>
+                            {item.EMPHASIS ? <strong>{item.EMPHASIS}</strong> : null}
+                            {item.DESCRIPTION ? <> {item.DESCRIPTION}</> : null}
+                          </p>
+                        ) : null}
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
           </div>
         </Swiper>
       </div>

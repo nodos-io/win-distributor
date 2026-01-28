@@ -12,6 +12,7 @@ import {
 import { Fragment } from "react";
 import Script from "next/script";
 import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
+import { MovieSlider2, MovieSlider3, MovieSlider5 } from "@/components/slider/MovieSlider";
 
 const faqJsonLd = buildFaqJsonLd(HOME_PAGE_CONTENT.FAQ.ITEMS);
 
@@ -100,6 +101,8 @@ const page = () => {
             </div>
           </section>
         ))}  
+        {/* Plan Benefits */}
+        <MovieSlider5 />
         {/*<< Faq Section Start >>*/}
         <section className="faq-section section-padding gamer-faq">
           <div className="container">
