@@ -1068,3 +1068,100 @@ export const MovieSlider4 = () => {
     </section>
   );
 };
+
+export const MovieSlider5 = () => {
+  return (
+    <section className="show-section section-padding movie-slider-5" id="shows">
+      <div className="container">
+        <div className="title-section-area">
+          <div className="section-title wow fadeInUp" data-wow-delay=".3s">
+            <h2 className="text-white">CONOCE LOS BENEFICIOS DE TU <span>PLAN DE INTERNET GAMER</span></h2>
+          </div>
+          <div
+            className="array-button style-2 wow fadeInUp"
+            data-wow-delay=".5s"
+          >
+            <button className="array-prev">
+              <i className="fas fa-chevron-left" />
+            </button>
+            <button className="array-next">
+              <i className="fas fa-chevron-right" />
+            </button>
+          </div>
+        </div>
+        <Swiper {...sliderProps.showsSlider5} className="swiper shows-slider">
+          <div className="swiper-wrapper">
+            <SwiperSlide className="swiper-slide">
+              <div className="shows-card-items shows-card-items--overlay">
+                <div className="shows-image">
+                  <img src="assets/img/shows/bg-beneficio-1.jpg" alt="img" />
+                  <div className="shows-overlay">
+                    <h4>NITRO</h4>
+                    <p>
+                      <strong>Hasta 120 horas mensuales para duplicar tu velocidad.</strong>&nbsp;
+                      Juega, streamea, descarga y actualiza tus juegos, todo al mismo tiempo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <div className="shows-card-items shows-card-items--overlay">
+                <div className="shows-image">
+                  <img src="assets/img/shows/bg-beneficio-2.jpg" alt="img" />
+                  <div className="shows-overlay">
+                    <h4>CAMBIO DE IP</h4>
+                    <p><strong>Ahora podrás tener la opción de cambiar tu dirección IP</strong>&nbsp;
+                    en cualquier momento para mayor seguridad y privacidad, hasta 3 veces por mes.                         
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <div className="shows-card-items shows-card-items--overlay">
+                <div className="shows-image">
+                  <img src="assets/img/shows/bg-beneficio-3.jpg" alt="img" />
+                  <div className="shows-overlay">
+                    <h4>ATENCIÓN 24/7 por Discord</h4>
+                    <p>
+                      <strong>Servicio de atención técnica de gamers para gamers.</strong>&nbsp;
+                      Solucionamos tus inconvenientes, incluso durante las madrugadas, ahora también por nuestro canal de Discord.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <div className="shows-card-items shows-card-items--overlay">
+                <div className="shows-image">
+                  <img src="assets/img/shows/bg-beneficio-4.jpg" alt="img" />
+                  <div className="shows-overlay">
+                    <h4>ENRUTAMIENTO OPTIMIZADO CON</h4>
+                    <p>
+                      <strong>Tomamos la ruta más directa al servidor de tu juego favorito para que tengas partidas fluidas y sin interrupciones.</strong>&nbsp;
+                      Además, con ExitLag optimizamos más de 1900 juegos y es compatible con juegos de iOS y Android.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <div className="shows-card-items shows-card-items--overlay">
+                <div className="shows-image">
+                  <img src="assets/img/shows/bg-beneficio-5.jpg" alt="img" />
+                  <div className="shows-overlay">
+                    <h4>NAT 1 Y NAT 2</h4>
+                    <p>
+                      <strong>Te brindamos una mejor experiencia de juego en línea sin problemas de conectividad.</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </div>
+        </Swiper>
+      </div>
+    </section>
+  );
+};

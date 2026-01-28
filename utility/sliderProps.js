@@ -361,6 +361,20 @@ export const sliderProps = {
       },
     },
   },
+  showsSlider5: {
+    spaceBetween: 25,
+    speed: 2000,
+    loop: true,
+    slidesPerView: "auto",
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".array-next",
+      prevEl: ".array-prev",
+    },
+  },
   showsSlider3: {
     spaceBetween: 20,
     speed: 1500,
