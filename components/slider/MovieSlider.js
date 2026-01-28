@@ -1,5 +1,6 @@
 "use client";
 
+import { HOME_PAGE_CONTENT } from "@/lib/gamer-constants";
 import { sliderProps } from "@/utility/sliderProps";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -1069,13 +1070,22 @@ export const MovieSlider4 = () => {
   );
 };
 
-export const MovieSlider5 = () => {
+export const MovieSlider5 = ({ content = HOME_PAGE_CONTENT.MOVIE_SLIDER_5 }) => {
+  const { TITLE, ITEMS } = content;
   return (
     <section className="show-section section-padding movie-slider-5" id="shows">
       <div className="container">
         <div className="title-section-area">
           <div className="section-title wow fadeInUp" data-wow-delay=".3s">
-            <h2 className="text-white">CONOCE LOS BENEFICIOS DE TU <span>PLAN DE INTERNET GAMER</span></h2>
+            <h2 className="text-white">
+              {TITLE.TEXT}
+              {TITLE.HIGHLIGHT ? (
+                <>
+                  {" "}
+                  <span>{TITLE.HIGHLIGHT}</span>
+                </>
+              ) : null}
+            </h2>
           </div>
           <div
             className="array-button style-2 wow fadeInUp"
@@ -1091,74 +1101,27 @@ export const MovieSlider5 = () => {
         </div>
         <Swiper {...sliderProps.showsSlider5} className="swiper shows-slider">
           <div className="swiper-wrapper">
-            <SwiperSlide className="swiper-slide">
-              <div className="shows-card-items shows-card-items--overlay">
-                <div className="shows-image">
-                  <img src="assets/img/shows/bg-beneficio-1.jpg" alt="img" />
-                  <div className="shows-overlay">
-                    <h4>NITRO</h4>
-                    <p>
-                      <strong>Hasta 120 horas mensuales para duplicar tu velocidad.</strong>&nbsp;
-                      Juega, streamea, descarga y actualiza tus juegos, todo al mismo tiempo.
-                    </p>
+            {ITEMS.map((item) => {
+              const hasBody = item.EMPHASIS || item.DESCRIPTION;
+              return (
+                <SwiperSlide className="swiper-slide" key={item.id}>
+                  <div className="shows-card-items shows-card-items--overlay">
+                    <div className="shows-image">
+                      <img src={item.IMAGE} alt={item.ALT || item.TITLE} />
+                      <div className="shows-overlay">
+                        <h4>{item.TITLE}</h4>
+                        {hasBody ? (
+                          <p>
+                            {item.EMPHASIS ? <strong>{item.EMPHASIS}</strong> : null}
+                            {item.DESCRIPTION ? <> {item.DESCRIPTION}</> : null}
+                          </p>
+                        ) : null}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div className="shows-card-items shows-card-items--overlay">
-                <div className="shows-image">
-                  <img src="assets/img/shows/bg-beneficio-2.jpg" alt="img" />
-                  <div className="shows-overlay">
-                    <h4>CAMBIO DE IP</h4>
-                    <p><strong>Ahora podrás tener la opción de cambiar tu dirección IP</strong>&nbsp;
-                    en cualquier momento para mayor seguridad y privacidad, hasta 3 veces por mes.                         
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div className="shows-card-items shows-card-items--overlay">
-                <div className="shows-image">
-                  <img src="assets/img/shows/bg-beneficio-3.jpg" alt="img" />
-                  <div className="shows-overlay">
-                    <h4>ATENCIÓN 24/7 por Discord</h4>
-                    <p>
-                      <strong>Servicio de atención técnica de gamers para gamers.</strong>&nbsp;
-                      Solucionamos tus inconvenientes, incluso durante las madrugadas, ahora también por nuestro canal de Discord.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div className="shows-card-items shows-card-items--overlay">
-                <div className="shows-image">
-                  <img src="assets/img/shows/bg-beneficio-4.jpg" alt="img" />
-                  <div className="shows-overlay">
-                    <h4>ENRUTAMIENTO OPTIMIZADO CON</h4>
-                    <p>
-                      <strong>Tomamos la ruta más directa al servidor de tu juego favorito para que tengas partidas fluidas y sin interrupciones.</strong>&nbsp;
-                      Además, con ExitLag optimizamos más de 1900 juegos y es compatible con juegos de iOS y Android.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-slide">
-              <div className="shows-card-items shows-card-items--overlay">
-                <div className="shows-image">
-                  <img src="assets/img/shows/bg-beneficio-5.jpg" alt="img" />
-                  <div className="shows-overlay">
-                    <h4>NAT 1 Y NAT 2</h4>
-                    <p>
-                      <strong>Te brindamos una mejor experiencia de juego en línea sin problemas de conectividad.</strong>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
+                </SwiperSlide>
+              );
+            })}
           </div>
         </Swiper>
       </div>
