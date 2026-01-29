@@ -6,7 +6,12 @@ import { WHATSAPP_PHONE_LINK, HOME_PAGE_CONTENT } from "@/lib/hogar-constants";
 
 const DEFAULT_FORM_CONTENT = HOME_PAGE_CONTENT.CONTACT_FORM;
 
-const SuccessMessage = ({ countdown, stopRedirect, formContent, whatsappLink }) => (
+const SuccessMessage = ({
+  countdown,
+  stopRedirect,
+  formContent,
+  whatsappLink,
+}) => (
   <div
     className="alert border-0 shadow-sm p-3 rounded-3 success-message"
     style={{ backgroundColor: "#fff7ef" }}
@@ -15,11 +20,11 @@ const SuccessMessage = ({ countdown, stopRedirect, formContent, whatsappLink }) 
       <div className="fw-semibold" style={{ color: "var(--theme)" }}>
         {formContent.SUCCESS_MESSAGE}
       </div>
-      <div className="small text-body">
-        {formContent.REDIRECT.NOTICE}
-      </div>
+      <div className="small text-body">{formContent.REDIRECT.NOTICE}</div>
       <div className="d-flex align-items-center flex-wrap gap-2 small">
-        <span className="text-secondary">{formContent.REDIRECT.COUNTDOWN_LABEL}</span>
+        <span className="text-secondary">
+          {formContent.REDIRECT.COUNTDOWN_LABEL}
+        </span>
         <span
           id="countdown"
           className="badge text-bg-dark"
@@ -37,7 +42,12 @@ const SuccessMessage = ({ countdown, stopRedirect, formContent, whatsappLink }) 
       </div>
       <div className="small text-body">
         {formContent.DIRECT_LINK_PROMPT}&nbsp;
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="fw-semibold">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fw-semibold"
+        >
           {formContent.DIRECT_LINK_LABEL}
         </a>
       </div>
@@ -79,7 +89,10 @@ const ContactFormFields = ({ handleSubmit, submitting, formContent }) => (
             name="privacy-policy"
             required
           />
-          <label className="form-check-label form-contact-privacy" htmlFor="privacyPolicy">
+          <label
+            className="form-check-label form-contact-privacy"
+            htmlFor="privacyPolicy"
+          >
             {formContent.PRIVACY.LABEL_PREFIX}{" "}
             <a
               href={formContent.PRIVACY.LINK_HREF}
@@ -91,20 +104,30 @@ const ContactFormFields = ({ handleSubmit, submitting, formContent }) => (
           </label>
         </div>
       </div>
-      <div className="col-lg-12 d-flex justify-content-center wow fadeInUp" data-wow-delay=".8s">
+      <div
+        className="col-lg-12 d-flex justify-content-center wow fadeInUp"
+        data-wow-delay=".8s"
+      >
         <button
           type="submit"
           className={`theme-btn${submitting ? " btn-form-disabled" : ""}`}
           disabled={submitting}
         >
-          <span>{submitting ? formContent.BUTTONS.SUBMITTING : formContent.BUTTONS.DEFAULT}</span>
+          <span>
+            {submitting
+              ? formContent.BUTTONS.SUBMITTING
+              : formContent.BUTTONS.DEFAULT}
+          </span>
         </button>
       </div>
     </div>
   </form>
 );
 
-const ContactUsForm = ({ formContent = DEFAULT_FORM_CONTENT, whatsappLink = WHATSAPP_PHONE_LINK }) => {
+const ContactUsForm = ({
+  formContent = DEFAULT_FORM_CONTENT,
+  whatsappLink = WHATSAPP_PHONE_LINK,
+}) => {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [countdown, setCountdown] = useState(formContent.REDIRECT.SECONDS);
@@ -124,7 +147,7 @@ const ContactUsForm = ({ formContent = DEFAULT_FORM_CONTENT, whatsappLink = WHAT
             const newWindow = window.open(
               whatsappLink,
               "_blank",
-              "noopener,noreferrer"
+              "noopener,noreferrer",
             );
             if (!newWindow) {
               window.location.href = whatsappLink;
@@ -162,16 +185,34 @@ const ContactUsForm = ({ formContent = DEFAULT_FORM_CONTENT, whatsappLink = WHAT
   return (
     <div className="contact-us-container contact-form-items white-popup-block p-4 bg-white rounded shadow">
       <div className="contact-title">
-        <h3 className="center" style={{color: "var(--theme)", marginBottom: "15px"}}>{formContent.TITLE}</h3>
-        <h4 className="wow fadeInUp center" data-wow-delay=".3s" style={{marginBottom: "15px"}}>
+        <h3
+          className="center"
+          style={{ color: "var(--theme)", marginBottom: "15px" }}
+        >
+          {formContent.TITLE}
+        </h3>
+        <h4
+          className="wow fadeInUp center"
+          data-wow-delay=".3s"
+          style={{ marginBottom: "15px" }}
+        >
           {!success ? formContent.SUBTITLE : formContent.SUCCESS_SUBTITLE}
         </h4>
         <p>&nbsp;</p>
       </div>
       {success ? (
-        <SuccessMessage countdown={countdown} stopRedirect={stopRedirect} formContent={formContent} whatsappLink={whatsappLink} />
+        <SuccessMessage
+          countdown={countdown}
+          stopRedirect={stopRedirect}
+          formContent={formContent}
+          whatsappLink={whatsappLink}
+        />
       ) : (
-        <ContactFormFields handleSubmit={handleSubmit} submitting={submitting} formContent={formContent} />
+        <ContactFormFields
+          handleSubmit={handleSubmit}
+          submitting={submitting}
+          formContent={formContent}
+        />
       )}
     </div>
   );
