@@ -40,9 +40,10 @@ const getMailjetConfig = () => {
 const sendContactNotificationEmail = async ({ timestamp, phone, dni }) => {
   const toList = parseEmailList(process.env.CONTACT_US_MAILJET_TO || "");
   const fromEmail = process.env.CONTACT_US_MAILJET_FROM_EMAIL;
-  const fromName = process.env.CONTACT_US_MAILJET_FROM_NAME || "Contacto Web";
+  const fromName = process.env.CONTACT_US_MAILJET_FROM_NAME || "Nodos";
   const subject =
-    process.env.CONTACT_US_MAILJET_SUBJECT || "Nuevo registro de contacto";
+    process.env.CONTACT_US_MAILJET_SUBJECT ||
+    "WIN - Nuevo registro de contacto";
   const sandboxMode = process.env.CONTACT_US_MAILJET_SANDBOX === "true";
   const host = process.env.CONTACT_US_MAILJET_HOST || "api.mailjet.com";
 
