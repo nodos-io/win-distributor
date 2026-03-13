@@ -59,7 +59,10 @@ const PlanSlider = ({
     <div className="pricing-card-items">
       <div className="plan-card__top">
         <p className="plan-card__title">{plan.title}</p>
-        <p className="plan-card__speed">{plan.speed}</p>
+        <p
+          className="plan-card__speed"
+          dangerouslySetInnerHTML={{ __html: String(plan.speed ?? "") }}
+        />
         {plan.brandImage ? (
           <>
             <div className="plan-card__plus-row">
