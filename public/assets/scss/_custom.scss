@@ -534,6 +534,17 @@ section.feature-icon-box-area{
     color: #000;
   }
 
+  .plan-card__speed{
+    .speed-prefix, .speed-suffix{
+      font-size: 16px;
+      display: block;
+      font-weight: 400 !important;
+    }
+    .speed-prefix{
+      text-decoration: line-through;
+    }
+  }
+
   .plan-card__plus{
     color: var(--theme);
     font-weight: 900;
@@ -908,3 +919,4 @@ body.body-bg-4{
     }
   }
 }
+

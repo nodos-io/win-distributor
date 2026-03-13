@@ -28,10 +28,16 @@ const Home1 = ({
         className="swiper hero-slider"
       >
         {slides.map((slide) => (
-          <SwiperSlide className="swiper-slide swiper-mobile-slide" key={slide.id}>
+          <SwiperSlide
+            className="swiper-slide swiper-mobile-slide"
+            key={slide.id}
+          >
             <div className="hero-image">
               <picture>
-                <source media="(max-width: 991px)" srcSet={slide.MOBILE_SRC || slide.DESKTOP_SRC} />
+                <source
+                  media="(max-width: 991px)"
+                  srcSet={slide.MOBILE_SRC || slide.DESKTOP_SRC}
+                />
                 <img src={slide.DESKTOP_SRC} alt={slide.ALT} loading="lazy" />
               </picture>
             </div>
@@ -41,9 +47,12 @@ const Home1 = ({
       <div className="hero-form-overlay">
         <div className="container">
           <div className="row justify-content-between align-items-center h-100">
-            <div className="col-xl-4">
+            <div className="col-xl-4 offset-xl-8">
               <div className="hero-content">
-                <ContactUsForm formContent={formContent} whatsappLink={whatsappLink} />
+                <ContactUsForm
+                  formContent={formContent}
+                  whatsappLink={whatsappLink}
+                />
               </div>
             </div>
           </div>
